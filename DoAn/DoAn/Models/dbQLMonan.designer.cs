@@ -126,11 +126,15 @@ namespace DoAn.Models
 		
 		private int _MaDonHang;
 		
-		private int _Masach;
+		private int _Mamon;
 		
 		private System.Nullable<int> _Soluong;
 		
 		private System.Nullable<decimal> _Dongia;
+		
+		private EntityRef<DONDATHANG> _DONDATHANG;
+		
+		private EntityRef<MONAN> _MONAN;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -138,8 +142,8 @@ namespace DoAn.Models
     partial void OnCreated();
     partial void OnMaDonHangChanging(int value);
     partial void OnMaDonHangChanged();
-    partial void OnMasachChanging(int value);
-    partial void OnMasachChanged();
+    partial void OnMamonChanging(int value);
+    partial void OnMamonChanged();
     partial void OnSoluongChanging(System.Nullable<int> value);
     partial void OnSoluongChanged();
     partial void OnDongiaChanging(System.Nullable<decimal> value);
@@ -148,6 +152,8 @@ namespace DoAn.Models
 		
 		public CHITIETDONTHANG()
 		{
+			this._DONDATHANG = default(EntityRef<DONDATHANG>);
+			this._MONAN = default(EntityRef<MONAN>);
 			OnCreated();
 		}
 		
@@ -162,6 +168,10 @@ namespace DoAn.Models
 			{
 				if ((this._MaDonHang != value))
 				{
+					if (this._DONDATHANG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMaDonHangChanging(value);
 					this.SendPropertyChanging();
 					this._MaDonHang = value;
@@ -171,22 +181,26 @@ namespace DoAn.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Masach", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Masach
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mamon", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Mamon
 		{
 			get
 			{
-				return this._Masach;
+				return this._Mamon;
 			}
 			set
 			{
-				if ((this._Masach != value))
+				if ((this._Mamon != value))
 				{
-					this.OnMasachChanging(value);
+					if (this._MONAN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMamonChanging(value);
 					this.SendPropertyChanging();
-					this._Masach = value;
-					this.SendPropertyChanged("Masach");
-					this.OnMasachChanged();
+					this._Mamon = value;
+					this.SendPropertyChanged("Mamon");
+					this.OnMamonChanged();
 				}
 			}
 		}
@@ -231,6 +245,74 @@ namespace DoAn.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DONDATHANG_CHITIETDONTHANG", Storage="_DONDATHANG", ThisKey="MaDonHang", OtherKey="MaDonHang", IsForeignKey=true)]
+		public DONDATHANG DONDATHANG
+		{
+			get
+			{
+				return this._DONDATHANG.Entity;
+			}
+			set
+			{
+				DONDATHANG previousValue = this._DONDATHANG.Entity;
+				if (((previousValue != value) 
+							|| (this._DONDATHANG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DONDATHANG.Entity = null;
+						previousValue.CHITIETDONTHANGs.Remove(this);
+					}
+					this._DONDATHANG.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDONTHANGs.Add(this);
+						this._MaDonHang = value.MaDonHang;
+					}
+					else
+					{
+						this._MaDonHang = default(int);
+					}
+					this.SendPropertyChanged("DONDATHANG");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MONAN_CHITIETDONTHANG", Storage="_MONAN", ThisKey="Mamon", OtherKey="Mamon", IsForeignKey=true)]
+		public MONAN MONAN
+		{
+			get
+			{
+				return this._MONAN.Entity;
+			}
+			set
+			{
+				MONAN previousValue = this._MONAN.Entity;
+				if (((previousValue != value) 
+							|| (this._MONAN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._MONAN.Entity = null;
+						previousValue.CHITIETDONTHANGs.Remove(this);
+					}
+					this._MONAN.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDONTHANGs.Add(this);
+						this._Mamon = value.Mamon;
+					}
+					else
+					{
+						this._Mamon = default(int);
+					}
+					this.SendPropertyChanged("MONAN");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -270,6 +352,8 @@ namespace DoAn.Models
 		
 		private System.Nullable<int> _MaKH;
 		
+		private EntitySet<CHITIETDONTHANG> _CHITIETDONTHANGs;
+		
 		private EntityRef<KHACHHANG> _KHACHHANG;
 		
     #region Extensibility Method Definitions
@@ -292,6 +376,7 @@ namespace DoAn.Models
 		
 		public DONDATHANG()
 		{
+			this._CHITIETDONTHANGs = new EntitySet<CHITIETDONTHANG>(new Action<CHITIETDONTHANG>(this.attach_CHITIETDONTHANGs), new Action<CHITIETDONTHANG>(this.detach_CHITIETDONTHANGs));
 			this._KHACHHANG = default(EntityRef<KHACHHANG>);
 			OnCreated();
 		}
@@ -420,6 +505,19 @@ namespace DoAn.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DONDATHANG_CHITIETDONTHANG", Storage="_CHITIETDONTHANGs", ThisKey="MaDonHang", OtherKey="MaDonHang")]
+		public EntitySet<CHITIETDONTHANG> CHITIETDONTHANGs
+		{
+			get
+			{
+				return this._CHITIETDONTHANGs;
+			}
+			set
+			{
+				this._CHITIETDONTHANGs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DONDATHANG", Storage="_KHACHHANG", ThisKey="MaKH", OtherKey="MaKH", IsForeignKey=true)]
 		public KHACHHANG KHACHHANG
 		{
@@ -472,6 +570,18 @@ namespace DoAn.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.DONDATHANG = this;
+		}
+		
+		private void detach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.DONDATHANG = null;
 		}
 	}
 	
@@ -869,6 +979,8 @@ namespace DoAn.Models
 		
 		private System.Nullable<int> _Maloai;
 		
+		private EntitySet<CHITIETDONTHANG> _CHITIETDONTHANGs;
+		
 		private EntityRef<LOAI> _LOAI;
 		
     #region Extensibility Method Definitions
@@ -895,6 +1007,7 @@ namespace DoAn.Models
 		
 		public MONAN()
 		{
+			this._CHITIETDONTHANGs = new EntitySet<CHITIETDONTHANG>(new Action<CHITIETDONTHANG>(this.attach_CHITIETDONTHANGs), new Action<CHITIETDONTHANG>(this.detach_CHITIETDONTHANGs));
 			this._LOAI = default(EntityRef<LOAI>);
 			OnCreated();
 		}
@@ -1063,6 +1176,19 @@ namespace DoAn.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MONAN_CHITIETDONTHANG", Storage="_CHITIETDONTHANGs", ThisKey="Mamon", OtherKey="Mamon")]
+		public EntitySet<CHITIETDONTHANG> CHITIETDONTHANGs
+		{
+			get
+			{
+				return this._CHITIETDONTHANGs;
+			}
+			set
+			{
+				this._CHITIETDONTHANGs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAI_MONAN", Storage="_LOAI", ThisKey="Maloai", OtherKey="Maloai", IsForeignKey=true)]
 		public LOAI LOAI
 		{
@@ -1115,6 +1241,18 @@ namespace DoAn.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.MONAN = this;
+		}
+		
+		private void detach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.MONAN = null;
 		}
 	}
 }

@@ -3,9 +3,11 @@
   <Table Name="dbo.CHITIETDONTHANG" Member="CHITIETDONTHANGs">
     <Type Name="CHITIETDONTHANG">
       <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Masach" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Mamon" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Dongia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="DONDATHANG_CHITIETDONTHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" IsForeignKey="true" />
+      <Association Name="MONAN_CHITIETDONTHANG" Member="MONAN" ThisKey="Mamon" OtherKey="Mamon" Type="MONAN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
@@ -16,6 +18,7 @@
       <Column Name="Ngaydat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Ngaygiao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DONDATHANG_CHITIETDONTHANG" Member="CHITIETDONTHANGs" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="CHITIETDONTHANG" />
       <Association Name="KHACHHANG_DONDATHANG" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
     </Type>
   </Table>
@@ -49,6 +52,7 @@
       <Column Name="Trangthai" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="Thucuong" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="Maloai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MONAN_CHITIETDONTHANG" Member="CHITIETDONTHANGs" ThisKey="Mamon" OtherKey="Mamon" Type="CHITIETDONTHANG" />
       <Association Name="LOAI_MONAN" Member="LOAI" ThisKey="Maloai" OtherKey="Maloai" Type="LOAI" IsForeignKey="true" />
     </Type>
   </Table>

@@ -55,9 +55,9 @@ GO
 CREATE TABLE CHITIETDONTHANG
 (
 	MaDonHang INT,
-	Masach INT,
+	Mamon INT,
 	Soluong Int Check(Soluong>0),
 	Dongia Decimal(18,0) Check(Dongia>=0),	
-	CONSTRAINT PK_CTDatHang PRIMARY KEY(MaDonHang,Masach),
+	CONSTRAINT PK_CTDatHang PRIMARY KEY(MaDonHang,Mamon),
 )
 
