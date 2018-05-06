@@ -144,6 +144,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NguoidungController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -281,6 +282,9 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\SPTheoloai.cshtml" />
     <Content Include="Views\Order\Loai.cshtml" />
+    <Content Include="Views\Nguoidung\Dangky.cshtml" />
+    <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
+    <Content Include="Views\Shared\_LayoutDn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

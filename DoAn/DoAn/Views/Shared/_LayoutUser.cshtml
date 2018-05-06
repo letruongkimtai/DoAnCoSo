@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-@model IEnumerable<DoAn.Models.LOAI>
 <html>
 <head>
     <meta charset="utf-8">
@@ -30,6 +29,8 @@
                     <div class="col-md-6 language">
                         <ul>
                             <li><a href="#">My Account</a></li>
+                            <li><a href="@Url.Action("Dangky","Nguoidung")">Đăng ký</a></li>
+                            <li><a href="@Url.Action("Dangnhap","Nguoidung")">Đăng nhập</a></li>
                         </ul>
                     </div>
                 </div>
@@ -59,7 +60,7 @@
                             <li><a href="checkout.html">Checkout</a></li>
                             <li><a href="about.html">About us</a></li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Loại thức ăn</a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Thực đơn</a>
                                 <ul class="dropdown-menu">
                                     @Html.Action("Loai", "Order")
                                 </ul>
