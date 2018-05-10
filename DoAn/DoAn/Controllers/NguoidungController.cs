@@ -66,8 +66,8 @@ namespace MvcBookStore.Controllers
                 kh.Taikhoan = tendn;
                 kh.Matkhau = matkhau;
                 kh.Email = email;
-                kh.DiachiKH = diachi;
-                kh.DienthoaiKH = dienthoai;
+                kh.Diachi = diachi;
+                kh.Dienthoai = dienthoai;
                 kh.Ngaysinh =DateTime.Parse(ngaysinh);
                 db.KHACHHANGs.InsertOnSubmit(kh);
                 db.SubmitChanges();

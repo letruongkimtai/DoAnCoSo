@@ -11,9 +11,9 @@ namespace DoAn.Controllers
     {
         // GET: Order
         dbQLMonanDataContext data = new dbQLMonanDataContext();
-        private List<MONAN> Laymonanmoi(int count)
+        private List<CTMONAN> Laymonanmoi(int count)
         {
-            return data.MONANs.OrderByDescending(a => a.Giaban).Take(count).ToList();
+            return data.CTMONANs.OrderByDescending(a => a.Giaban).Take(count).ToList();
         }
         public ActionResult Index()
         {
@@ -21,12 +21,12 @@ namespace DoAn.Controllers
         }
         public ActionResult SPTheoloai(int id)
         {
-            var monan = from ma in data.MONANs where ma.Maloai == id select ma;
+            var monan = from ma in data.CTMONANs where ma.Maloai == id select ma;
             return View(monan);
         }
         public ActionResult Loai()
         {
-            var loai = from l in data.LOAIs select l;
+            var loai = from l in data.LOAIMONs select l;
             return PartialView(loai);
         }
     }
