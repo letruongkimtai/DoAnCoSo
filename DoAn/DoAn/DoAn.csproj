@@ -273,6 +273,7 @@
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\waypoint.min.js" />
     <Content Include="Views\Shared\index.html" />
+    <Content Include="Views\Shared\Signup.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -291,9 +292,10 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\SPTheoloai.cshtml" />
     <Content Include="Views\Order\Loai.cshtml" />
-    <Content Include="Views\Nguoidung\Dangky.cshtml" />
     <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
     <Content Include="Views\Shared\_LayoutDn.cshtml" />
+    <Content Include="Views\Shared\_LayoutSignup.cshtml" />
+    <Content Include="Views\Nguoidung\Dangky.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

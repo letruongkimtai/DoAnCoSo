@@ -1,66 +1,79 @@
-﻿@{
-    ViewBag.Title = "Dang Ky";
-    Layout = "~/Views/Shared/_LayoutDn.cshtml";
+﻿
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_LayoutSignup.cshtml";
 }
-<table align="center">
-    <h3 style="text-align:center;color:white">--------------------</h3>
-    <h2 style="text-align:center;color:white">ĐĂNG KÝ THÀNH VIÊN</h2>
-    @using (Html.BeginForm())
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Đăng ký thành viên</a>
+        </h1>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+        <div class="panel-body pb2">
+            <div class="accordion-list-content" style="overflow: hidden; display: block;">
+                <div class="col-md-6 check-name">
+                    <div>
+                        @using (Html.BeginForm())
     {
-        @Html.ValidationSummary(true)
-            <tr style="height:40px;color:white">
-                <td> Họ tên khách hàng:</td>
-                <td>@Html.TextBox("HotenKH")
-                @ViewData["Loi1"]
-                </td>
-            </tr>
-            <tr style="height:40px;color:white">
-                <td> Tên đăng nhập:</td>
-                <td>
-                @Html.TextBox("TenDN")
-                @ViewData["Loi2"]</td>
-            </tr>
-            <tr style="height:40px;color:white">
-                <td>  Mật khẩu:</td>
-                <td> 
-                @Html.Password("Matkhau")
-                @ViewData["Loi3"]</td>
-            </tr>
-            <tr style="height:40px;color:white">
-                <td>Mật khẩu nhập lại: </td>
-                <td>
-                @Html.Password("Matkhaunhaplai")
-                @ViewData["Loi4"]</td>
-            </tr>
-        
-        
-            <tr style="height:40px;color:white">
-                <td> Email:</td>
-                <td> @Html.TextBox("Email")
-                @ViewData["Loi5"]</td>
-            </tr>
-            <tr style="height:40px;color:white">
-                <td> Địa chỉ:</td>
-                <td> 
-                @Html.TextBox("Diachi")</td>
-            </tr>
-            <tr style="height:40px;color:white">
-                <td>Điện thoại:</td>
-                <td> 
-                @Html.TextBox("Dienthoai")
-                @ViewData["Loi6"]</td>
-            </tr>
-            <tr style="height:40px;color:white">
-               <td> Ngày sinh :</td>
-                <td>
-                    <input type="date" name="Ngaysinh" />
-                </td>
-            </tr>
-            <tr style="height:40px">
-                <td></td>
-                <td>
-                    <input type="Submit" value="Đăng ký" />
-                </td>
-            </tr>
+                    @Html.ValidationSummary(true)
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" placeholder="Họ và Tên">
+                                    @ViewData["Loi1"]
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" placeholder="Tên đăng nhập">
+                                    @ViewData["Loi2"]
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="password" class="form-control" placeholder="Mật Khẩu">
+                                    @ViewData["Loi3"]
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="password" class="form-control" placeholder="Nhập lại mật khẩu">
+                                    @ViewData["Loi4"]
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" placeholder="Địa chỉ">
+                                    @ViewData["Loi5"]
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="tel" class="form-control" placeholder="Số điện thoại">
+                                    @ViewData["Loi6"]
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="date" class="form-control" placeholder="Ngày sinh">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-default" style="margin-left:15px;">Đăng ký</button>
+                        </form>
+                    
     }
-</table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
