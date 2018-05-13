@@ -1969,15 +1969,16 @@ ul.pagination-list li a.active,ul.pagination-list li a:hover {
   text-transform:capitalize;
 }
 .form-control {
-  -webkit-border-radius:3px;
-  -moz-border-radius:3px;
-  border-radius:3px;
-  background-color:#fff;
-  -webkit-box-shadow:inset 0 2px 4px rgba(206,203,195,.4);
-  -moz-box-shadow:inset 0 2px 4px rgba(206,203,195,.4);
-  box-shadow:inset 0 2px 4px rgba(206,203,195,.4);
-  border:solid 1px #c0b4a9;
-  padding:20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-box-shadow: inset 0 2px 4px rgba(206,203,195,.4);
+    -moz-box-shadow: inset 0 2px 4px rgba(206,203,195,.4);
+    box-shadow: inset 0 2px 4px rgba(206,203,195,.4);
+    border: solid 1px #c0b4a9;
+    padding: 20px;
+    margin-top:15px;
 }
 .inl h4 {
   padding:10px 15px;

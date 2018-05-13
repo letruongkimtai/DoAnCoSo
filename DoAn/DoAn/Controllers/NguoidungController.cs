@@ -53,7 +53,7 @@ namespace MvcBookStore.Controllers
 
             if (String.IsNullOrEmpty(email))
             {
-                ViewData["Loi5"] = "Email không được bỏ trống";
+                ViewData["Loi5"] = "Địa chỉ không được bỏ trống";
             }
 
             if (String.IsNullOrEmpty(dienthoai))

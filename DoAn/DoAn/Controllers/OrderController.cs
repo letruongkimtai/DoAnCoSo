@@ -17,7 +17,9 @@ namespace DoAn.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            var NewDish = Laymonanmoi(4);
+
+            return View(NewDish);
         }
         public ActionResult SPTheoloai(int id)
         {

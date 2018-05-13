@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        h5 {
+            text-decoration: line-through;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Thức ăn nhanh Win</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/content/bootstrap.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="~/content/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="~/content/font-awesome.css" media="screen">
+    <link rel="stylesheet" href="~/content/flexslider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/content/responsive.css" type="text/css" media="screen" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <!--top-strip-->
+    <div class="top-strip">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 user">
+                </div>
+                <div class="col-md-6 language" style="text-align: left">
+                    <ul>
+                        <li><a href="@Url.Action("Dangky","Nguoidung")">Đăng ký</a></li>
+                        <li><a href="@Url.Action("Dangnhap","Nguoidung")">Đăng nhập</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end-top-strip-->
+    <!--navbar-->
+    <div class="container header">
+        <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://localhost:59620/Order/Index"><img src="~/images/logo.png" alt="logo"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="http://localhost:59620/Order/Index">Trang chủ</a></li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Thực đơn</a>
+                            <ul class="dropdown-menu">
+                                @Html.Action("Loai", "Order")
+                            </ul>
+                        </li>
+                        <li><a href="cart.html">Giỏ hàng</a></li>
+                        <li><a href="about.html">Khuyến mãi</a></li>
+                        <li><a href="contact.html">Cửa hàng</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+        </nav>
+    </div>
+    <!--end-navbar-->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 produti">
+                    <h4>CHECKOUT</h4>
+                </div>
+                <div class="col-md-2 cart">
+                    <h4><a href="#">chart (2 items)</a></h4>
+                    <ul>
+                        <li><a href="#">home /</a></li>
+                        <li><a href="#">products</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- shop-page -->
+    <div class="container checking-area">
+        <div class="row">
+            <div class="col-md-9 checkout-accordion">
+
+                <div class="col-md-12 white-bg">
+
+                    <div class="bs-example">
+                        <div>
+                            @RenderBody()
+                        </div>
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. Checkout Method</a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in panel-body">
+                                    <div class="accordion-list-content" style="overflow: hidden; display: block;">
+                                        <div class="col-md-6 checking">
+                                            <h4>new costumer</h4>
+                                            <div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="optionsRadios" value="option1" checked="">
+                                                        check as guset
+                                                    </label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="optionsRadios" value="option2">
+                                                        register
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                By creating an account you will be able to shop and be up to date with a status od an order, keep track of previous orders and buy faster when you decide to return.
+                                            </p>
+                                            <a href="#">continue</a>
+                                        </div>
+                                        <div class="col-md-6 check-name">
+                                            <h4>returning costumer</h4>
+                                            <div>
+                                                <form class="form-horizontal" role="form">
+                                                    <div class="form-group">
+                                                        <div class="col-sm-12">
+                                                            <input type="email" class="form-control" placeholder="your name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="col-sm-12">
+                                                            <input type="password" class="form-control" placeholder="your e-mail">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <a href="#">forgot your pasword ?</a>
+                                                <br>
+                                                <a href=""><span>Log in</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 shop-sidebar">
+                <div class="sidebar-widgets">
+                    <div class="shop-widget">
+                        <h4>Categories</h4>
+                        <ul class="category-shop-list">
+                            <li>
+                                <a class="accordion-link" href="#">Watches <span>(4)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Jewellery <span>(8)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Technology <span>(6)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Kids <span>(5)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Electronics <span>(4)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Sports <span>(5)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="accordion-link" href="#">Bicycles <span>(7)</span></a>
+                                <ul class="accordion-list-content">
+                                    <li><a href="#">Jackets <span>(7)</span></a></li>
+                                    <li><a href="#">Electronics <span>(10)</span></a></li>
+                                    <li><a href="#">Sports <span>(12)</span></a></li>
+                                    <li><a href="#">Garden <span>(2)</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="shop-widget">
+                        <h4>Popular Products</h4>
+                        <ul class="popular-product">
+                            <li>
+                                <img alt="" src="images/product.png">
+                                <div>
+                                    <h6><a href="#">Iphone 5 black</a></h6>
+                                    <span>$766.00</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img alt="" src="images/product2.png">
+                                <div>
+                                    <h6><a href="#">Samasung Galaxy note 3</a></h6>
+                                    <span>$555.00</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img alt="" src="images/product3.png">
+                                <div>
+                                    <h6><a href="#">Iphone 5 black</a></h6>
+                                    <span>$766.00</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img alt="" src="images/product4.png">
+                                <div>
+                                    <h6><a href="#">Samasung Galaxy note 3</a></h6>
+                                    <span>$555.00</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--prize-->
+    <div class="prize">
+        <div class="container">
+            <h1>win our special prize on our facebook page</h1>
+        </div>
+    </div>
+    <!--end-prize-->
+    <!--footer-->
+    <div class="full-footer">
+        <div class="container-full">
+            <div class="container info">
+                <div class="row">
+                    <div class="col-md-4 addres">
+                        <img src="~/images/footer-logo.png" alt="logo">
+                        <h6>Thức Ăn Nhanh Win</h6>
+                        <p>
+                            360 Nguyễn Sơn, Quận Tân Bình, TP.HCM
+                        </p>
+                        <p>
+                            SĐT: 0909090909(Chị Trâm)
+                        </p>
+                    </div>
+                    <div class="col-md-2 account">
+                        <h4>Tài khoản</h4>
+                        <ul>
+                            <li><a href="#">Giỏ hàng</a></li>
+                            <li><a href="#">Thông tin</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 assistance">
+                        <h4>Chính sách và ưu đãi</h4>
+                        <ul>
+                            <li><a href="#">Hỗ trợ khách hàng</a></li>
+                            <li><a href="#">Chính sách giao hàng</a></li>
+                            <li><a href="#">Khuyến mãi và giảm giá</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 about">
+                        <h4>Đăng ký nhân thông tin khuyến mãi</h4>
+                        <p>
+                            Chức năng chưa đang được cập nhật
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end-addres-->
+        <div class="container">
+            <div class="row bottom-strip">
+                <div class="col-md-6 rights">
+                    <p>
+                        Copyright 2017 WIN Corporation. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="col-md-6 social">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-asterisk"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end-footer-->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-2196019-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script type="text/javascript" src="js/jquery.nouislider.min.js"></script>
+</body>
+</html>

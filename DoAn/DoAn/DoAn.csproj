@@ -176,6 +176,15 @@
     <Content Include="fonts\webfonts\geo-semibold\svg\style_169898.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images2\burger bo.jpg" />
+    <Content Include="Images2\burger ga.jpg" />
+    <Content Include="Images2\ga lac pho mai.jpg" />
+    <Content Include="Images2\hot dog.jpg" />
+    <Content Include="Images2\mi y.jpg" />
+    <Content Include="Images2\nuoc suoi.png" />
+    <Content Include="Images2\pepsi.jpg" />
+    <Content Include="Images2\pho mai que.jpg" />
+    <Content Include="Images2\tra sua.png" />
     <Content Include="images\client1.png" />
     <Content Include="images\client2.png" />
     <Content Include="images\client3.png" />
@@ -264,6 +273,7 @@
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\waypoint.min.js" />
     <Content Include="Views\Shared\index.html" />
+    <Content Include="Views\Shared\Signup.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -282,9 +292,10 @@
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\SPTheoloai.cshtml" />
     <Content Include="Views\Order\Loai.cshtml" />
-    <Content Include="Views\Nguoidung\Dangky.cshtml" />
     <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
     <Content Include="Views\Shared\_LayoutDn.cshtml" />
+    <Content Include="Views\Shared\_LayoutSignup.cshtml" />
+    <Content Include="Views\Nguoidung\Dangky.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
