@@ -3,30 +3,30 @@
     Layout = "~/Views/Shared/_LayoutDn.cshtml";
 }
 <table align="center">
-    <h3 style="text-align:center;color:white">--------------------</h3>
-    <h2 style="text-align:center;color:white">ĐĂNG KÝ THÀNH VIÊN</h2>
+    <h3 style="text-align:center;">--------------------</h3>
+    <h2 style="text-align:center;">ĐĂNG KÝ THÀNH VIÊN</h2>
     @using (Html.BeginForm())
     {
         @Html.ValidationSummary(true)
-            <tr style="height:40px;color:white">
+            <tr style="height:40px;">
                 <td> Họ tên khách hàng:</td>
                 <td>@Html.TextBox("HotenKH")
                 @ViewData["Loi1"]
                 </td>
             </tr>
-            <tr style="height:40px;color:white">
+            <tr style="height:40px;">
                 <td> Tên đăng nhập:</td>
                 <td>
                 @Html.TextBox("TenDN")
                 @ViewData["Loi2"]</td>
             </tr>
-            <tr style="height:40px;color:white">
+            <tr style="height:40px;">
                 <td>  Mật khẩu:</td>
                 <td> 
                 @Html.Password("Matkhau")
                 @ViewData["Loi3"]</td>
             </tr>
-            <tr style="height:40px;color:white">
+            <tr style="height:40px;">
                 <td>Mật khẩu nhập lại: </td>
                 <td>
                 @Html.Password("Matkhaunhaplai")
@@ -34,23 +34,23 @@
             </tr>
         
         
-            <tr style="height:40px;color:white">
+            <tr style="height:40px;">
                 <td> Email:</td>
                 <td> @Html.TextBox("Email")
                 @ViewData["Loi5"]</td>
             </tr>
-            <tr style="height:40px;color:white">
+            <tr style="height:40px;">
                 <td> Địa chỉ:</td>
                 <td> 
                 @Html.TextBox("Diachi")</td>
             </tr>
-            <tr style="height:40px;color:white">
+            <tr style="height:40px;">
                 <td>Điện thoại:</td>
                 <td> 
                 @Html.TextBox("Dienthoai")
                 @ViewData["Loi6"]</td>
             </tr>
-            <tr style="height:40px;color:white">
+            <tr style="height:40px;">
                <td> Ngày sinh :</td>
                 <td>
                     <input type="date" name="Ngaysinh" />
