@@ -3,6 +3,68 @@
     ViewBag.Title = "Dangky";
     Layout = "~/Views/Shared/_LayoutSignup.cshtml";
 }
+<<<<<<< HEAD
+<table align="center">
+    <h3 style="text-align:center;">--------------------</h3>
+    <h2 style="text-align:center;">ĐĂNG KÝ THÀNH VIÊN</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+            <tr style="height:40px;">
+                <td> Họ tên khách hàng:</td>
+                <td>@Html.TextBox("HotenKH")
+                @ViewData["Loi1"]
+                </td>
+            </tr>
+            <tr style="height:40px;">
+                <td> Tên đăng nhập:</td>
+                <td>
+                @Html.TextBox("TenDN")
+                @ViewData["Loi2"]</td>
+            </tr>
+            <tr style="height:40px;">
+                <td>  Mật khẩu:</td>
+                <td> 
+                @Html.Password("Matkhau")
+                @ViewData["Loi3"]</td>
+            </tr>
+            <tr style="height:40px;">
+                <td>Mật khẩu nhập lại: </td>
+                <td>
+                @Html.Password("Matkhaunhaplai")
+                @ViewData["Loi4"]</td>
+            </tr>
+        
+        
+            <tr style="height:40px;">
+                <td> Email:</td>
+                <td> @Html.TextBox("Email")
+                @ViewData["Loi5"]</td>
+            </tr>
+            <tr style="height:40px;">
+                <td> Địa chỉ:</td>
+                <td> 
+                @Html.TextBox("Diachi")</td>
+            </tr>
+            <tr style="height:40px;">
+                <td>Điện thoại:</td>
+                <td> 
+                @Html.TextBox("Dienthoai")
+                @ViewData["Loi6"]</td>
+            </tr>
+            <tr style="height:40px;">
+               <td> Ngày sinh :</td>
+                <td>
+                    <input type="date" name="Ngaysinh" />
+                </td>
+            </tr>
+            <tr style="height:40px">
+                <td></td>
+                <td>
+                    <input type="Submit" value="Đăng ký" />
+                </td>
+            </tr>
+=======
 
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -68,6 +130,7 @@
                             <button type="submit" class="btn btn-default" style="margin-left:15px;">Đăng ký</button>
                         </form>
                     
+>>>>>>> d7db7210442adca8c9dd15c04f44fb78b4297772
     }
                     </div>
                 </div>
