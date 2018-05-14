@@ -24,15 +24,24 @@ namespace MvcBookStore.Controllers
         [HttpPost]
         public ActionResult Dangky(FormCollection collection,KHACHHANG kh)
         {
-            
-            var hoten = collection["HotenKH"];
+
+            /*var hoten = collection["HotenKH"];
             var tendn = collection["TenDN"];
             var matkhau = collection["Matkhau"];
             var matkhaunhaplai = collection["Matkhaunhaplai"];
             var diachi = collection["Diachi"];
             var email = collection["Email"];
             var dienthoai = collection["Dienthoai"];
-            var ngaysinh =String.Format("{0:MM/dd/yyyy}",collection["Ngaysinh"]);
+            var ngaysinh =String.Format("{0:MM/dd/yyyy}",collection["Ngaysinh"]);*/
+
+            var hoten = collection.Get("HotenKH");
+            var tendn = collection.Get("TenDN");
+            var matkhau = collection.Get("Matkhau");
+            var matkhaunhaplai = collection.Get("Matkhaunhaplai");
+            var diachi  = collection.Get("Diachi");
+            var email = collection.Get("Email");
+            var dienthoai = collection.Get("Dienthoai");
+            var ngaysinh = String.Format("{0:MM/dd/yyyy}", collection.Get("Ngaysinh"));
             if (String.IsNullOrEmpty(hoten))
             {
                 ViewData["Loi1"] = "Họ tên khách hàng không được để trống";
