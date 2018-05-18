@@ -31,5 +31,19 @@ namespace DoAn.Controllers
             var loai = from l in data.LOAIMONs select l;
             return PartialView(loai);
         }
+
+        public ActionResult Catalogue()
+        {
+            var type = from l in data.LOAIMONs select l;
+            return PartialView(type);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var dish = from s in data.CTMONANs
+                       where s.Mamon == id
+                       select s;
+            return View();
+        }
     }
 }

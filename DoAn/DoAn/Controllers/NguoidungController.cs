@@ -91,30 +91,19 @@ namespace MvcBookStore.Controllers
         }
         [HttpPost]
         public ActionResult Dangnhap(FormCollection collection)
-        { 
-            var tendn = collection["TenDN"];
-            var matkhau = collection["Matkhau"];
-            if (String.IsNullOrEmpty(tendn))
+        {
+            string tendn = collection.Get("userName");
+            string matkhau = collection.Get("password");
+
+            KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.Taikhoan == tendn && n.Matkhau == matkhau);
+            if (kh != null)
             {
-                ViewData["Loi1"] = "Phải nhập tên đăng nhập";
+                //ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
+                Session["Taikhoan"] = kh;
+                return RedirectToAction("Index", "Order");
             }
-            else if (String.IsNullOrEmpty(matkhau))
-                {
-                ViewData["Loi2"] = "Phải nhập mật khẩu";
-                }
-                else
-                {
-                    KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.Taikhoan == tendn && n.Matkhau == matkhau);
-                    if (kh != null)
-                    {
-                    //ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
-                        Session["Taikhoan"] = kh;
-                        return RedirectToAction("Index", "Order");
-                }
-                    else
-                        ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";
-                }
             return View();
         }
-	}
+
+    }
 }

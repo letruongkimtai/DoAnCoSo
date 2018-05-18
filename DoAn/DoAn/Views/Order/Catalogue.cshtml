@@ -1,0 +1,26 @@
+﻿@model IEnumerable<DoAn.Models.LOAIMON>
+
+<div class="shop-widget">
+    <h4>Thực đơn</h4>
+    @foreach (var sideitem in Model)
+    {
+        <ul class="category-shop-list">
+            <li>
+                <a style=" display: inline-block;
+                           width: 100%;
+                           color: #554a4c;
+                           font-size: 15px;
+                           font-weight: normal;
+                           transition: all 0.2s ease-in-out;
+                           -moz-transition: all 0.2s ease-in-out;
+                           -webkit-transition: all 0.2s ease-in-out;
+                           -o-transition: all 0.2s ease-in-out;
+                           padding: 10px 5px;
+                           position: relative;
+                           text-decoration: none;" href="@Url.Action("SPTheoloai","Order",new { id=sideitem.Maloai})">
+                    @sideitem.Tenloai
+                </a>
+            </li>
+        </ul>
+    }
+</div>

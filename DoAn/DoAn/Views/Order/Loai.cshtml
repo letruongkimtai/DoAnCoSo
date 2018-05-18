@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<DoAn.Models.LOAIMON>
-    <div class="list-group">
-        @foreach(var item in Model)
-        {
-            <a style="color:darkred; background-color: chocolate;" href="@Url.Action("SPTheoloai","Order",new { id=item.Maloai})" class="list-group-item">
-                @item.Tenloai
-            </a>
-        }
-    </div>
+<div class="list-group">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("SPTheoloai","Order",new { id=item.Maloai})" class="list-group-item">
+            @item.Tenloai
+        </a>
+    }
+</div>
 

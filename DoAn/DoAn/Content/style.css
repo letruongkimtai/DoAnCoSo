@@ -4,6 +4,20 @@ ul {
   padding:0;
   margin:0;
 }
+.category-shop-list li a.Catalogue {
+    display: inline-block;
+    width: 100%;
+    color: #554a4c;
+    font-size: 15px;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    padding: 10px 5px;
+    position: relative;
+    text-decoration: none;
+}
 ul li {
   list-style:none;
 }
@@ -1328,6 +1342,7 @@ ul.product-list li.price {
 }
 .category-shop-list>li:first-child {
   margin-top:10px;
+  text-align:center;
 }
 .category-shop-list li a.accordion-link {
   display:inline-block;
@@ -1956,7 +1971,6 @@ ul.pagination-list li a.active,ul.pagination-list li a:hover {
   color:#e7e5de;
   text-transform:uppercase;
   text-decoration:none;
-  margin-bottom:25px;
   display:inline-block;
 }
 .check-name span:hover {
