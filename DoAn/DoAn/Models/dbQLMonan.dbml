@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLMonan" Class="dbQLMonanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-JSI4D6R\SQLEXPRESS;Initial Catalog=QLMonan;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLMonanConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QLMonan;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLMonanConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHITIETDONTHANG" Member="CHITIETDONTHANGs">
     <Type Name="CHITIETDONTHANG">
       <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Mamon" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Dongia" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="MaThucUong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="CTMONAN_CHITIETDONTHANG" Member="CTMONAN" ThisKey="Mamon" OtherKey="Mamon" Type="CTMONAN" IsForeignKey="true" />
       <Association Name="DONDATHANG_CHITIETDONTHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" IsForeignKey="true" />
+      <Association Name="Tb_Drink_CHITIETDONTHANG" Member="Tb_Drink" ThisKey="MaThucUong" OtherKey="MaThucUong" Type="Tb_Drink" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CTMONAN" Member="CTMONANs">
@@ -15,24 +17,12 @@
       <Column Name="Mamon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Tenmon" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Giaban" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="Soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Anh" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Trangthai" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="Thucuong" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Mota" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Maloai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="CTMONAN_CHITIETDONTHANG" Member="CHITIETDONTHANGs" ThisKey="Mamon" OtherKey="Mamon" Type="CHITIETDONTHANG" />
       <Association Name="LOAIMON_CTMONAN" Member="LOAIMON" ThisKey="Maloai" OtherKey="Maloai" Type="LOAIMON" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
-    <Type Name="DONDATHANG">
-      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Dathanhtoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Tinhtranggiaohang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Ngaydat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DONDATHANG_CHITIETDONTHANG" Member="CHITIETDONTHANGs" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="CHITIETDONTHANG" />
-      <Association Name="KHACHHANG_DONDATHANG" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
@@ -48,11 +38,30 @@
       <Association Name="KHACHHANG_DONDATHANG" Member="DONDATHANGs" ThisKey="MaKH" OtherKey="MaKH" Type="DONDATHANG" />
     </Type>
   </Table>
+  <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
+    <Type Name="DONDATHANG">
+      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dathanhtoan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tinhtranggiaohang" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Ngaydat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DONDATHANG_CHITIETDONTHANG" Member="CHITIETDONTHANGs" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="CHITIETDONTHANG" />
+      <Association Name="KHACHHANG_DONDATHANG" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.LOAIMON" Member="LOAIMONs">
     <Type Name="LOAIMON">
       <Column Name="Maloai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Tenloai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Association Name="LOAIMON_CTMONAN" Member="CTMONANs" ThisKey="Maloai" OtherKey="Maloai" Type="CTMONAN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tb_Drinks" Member="Tb_Drinks">
+    <Type Name="Tb_Drink">
+      <Column Name="MaThucUong" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenThucUong" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="GiaBan" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="Tb_Drink_CHITIETDONTHANG" Member="CHITIETDONTHANGs" ThisKey="MaThucUong" OtherKey="MaThucUong" Type="CHITIETDONTHANG" />
     </Type>
   </Table>
 </Database>
