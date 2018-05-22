@@ -127,7 +127,7 @@ namespace DoAn.Controllers
             DONDATHANG ddh = new DONDATHANG();
             KHACHHANG kh =(KHACHHANG) Session["Taikhoan"];
             List<Giohang> gh = Laygiohang();
-            ddh.MaKH = kh.MaKH;            
+            ddh.MaKH = kh.MaKH;
             ddh.Ngaydat = DateTime.Now;
             ddh.Tinhtranggiaohang = false;
             ddh.Dathanhtoan = false;
