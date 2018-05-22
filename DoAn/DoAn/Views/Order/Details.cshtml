@@ -1,45 +1,36 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutDetails.cshtml";
 }
 
-<h2>Details</h2>
+
 <div class="single-product cold-md-12">
     <div class="flexslider col-md-6">
-        <img src="~/Images2/" />
+        <img class="img-responsive" src="~/Images2/@Model.Anh"/>
     </div>
     <div class="product-details col-md-6">
-        <h1></h1>
-        <p class="price">
-            $23.00
+        <h1>@Model.Tenmon</h1>
+        <p class="price" >
+            @Model.Giaban.000đ
         </p>
-        <span>$27.00</span>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non vestibulum massa, sit amet bibendum eros. In accumsan dignissim tellus ac faucibus. Mauris vel sollicitudin metus. Praesent ut neque nec velit euismod fermentum.
+        <p style="font-size:20px;line-height:30px">
+            @Model.Mota
         </p>
         <form action="#">
             <div class="qtyminus">
             </div>
-            <input type="text" name="quantity" value="1" class="qty">
+            <input style="font-size:15px" type="number" name="quantity" value="1" min="1" max="100" class="qty">
             <div class="qtyplus">
             </div>
         </form>
-        <a href="#">Add to Cart</a>
+        <button type="submit" style="margin-left:15px;height:34px;border-radius:5px;background-color: #a1fb69;">ORDER</button>
         <hr>
         <div class="availability">
             <p>
-                Availability:
+                Tình trạng:
             </p>
-            <span>in stock</span>
-        </div>
-        <div class="reviews">
-            <ul>
-                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-                <li><a href="#"><i class="fa fa-star-o"></i></a></li>
-            </ul>
+            <a>@Model.Trangthai</a>
         </div>
     </div>
     </div>

@@ -2498,10 +2498,11 @@ input.qty {
   clear:both;
 }
 .white-bg {
-  background:#fff;
-  -webkit-border-radius:3px;
-  -moz-border-radius:3px;
-  border-radius:3px;
+    background: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width:unset;
 }
 i {
   transform:rotate(0deg);

@@ -43,7 +43,7 @@ namespace DoAn.Controllers
             var dish = from s in data.CTMONANs
                        where s.Mamon == id
                        select s;
-            return View();
+            return View(dish.Single());
         }
     }
 }
