@@ -2,6 +2,7 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.75" name="dbQLMonan">
   <DataContextMoniker Name="/dbQLMonanDataContext" />
   <nestedChildShapes>
+<<<<<<< HEAD
     <classShape Id="71a45c2f-bb43-4af3-8e39-fd880a2e117c" absoluteBounds="6.25, 1.25, 2, 1.7708968098958329">
       <DataClassMoniker Name="/dbQLMonanDataContext/CHITIETDONTHANG" />
       <nestedChildShapes>
@@ -43,34 +44,97 @@
       <nodes>
         <classShapeMoniker Id="012126d1-2c36-4365-8c65-9e5efcc34e4e" />
         <classShapeMoniker Id="71a45c2f-bb43-4af3-8e39-fd880a2e117c" />
+=======
+    <classShape Id="0ea19def-8c58-4f07-ac04-3e5b6c2b757b" absoluteBounds="6.25, 1.25, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/dbQLMonanDataContext/CHITIETDONTHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac421701-1ceb-4683-a911-1998687c419f" absoluteBounds="6.265, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29e9cd58-a741-41fc-b384-3c2706e4aa88" absoluteBounds="3.5, 6.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dbQLMonanDataContext/CTMONAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36dc8525-f26b-42ad-9fa5-502030716400" absoluteBounds="3.515, 6.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5cee0b12-be22-44d7-9e90-b040956c634f" absoluteBounds="0.75, 1, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dbQLMonanDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="088afb15-db14-4455-b34f-1cf897efc6fc" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5868437-c07d-4368-9010-6f5b8de4336f" absoluteBounds="3.5, 1.25, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/dbQLMonanDataContext/DONDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="413404a0-6659-40a5-b44a-f916eb6db4e6" absoluteBounds="3.515, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="838eaadc-97b0-44e6-a08a-d171895453ae" absoluteBounds="0.75, 6.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/dbQLMonanDataContext/LOAIMON" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b5f594b-c2e2-48b0-be50-bd57018ca119" absoluteBounds="0.765, 7.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53123bde-60f5-4ebf-867f-9c35545619d2" absoluteBounds="3.5, 4.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dbQLMonanDataContext/Tb_Drink" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b54c16b-082c-4b63-9176-e1a0309ad669" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 7.45274983723958); (7.25 : 7.45274983723958); (7.25 : 3.02089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLMonanDataContext/CTMONAN/CTMONAN_CHITIETDONTHANG" />
+      <nodes>
+        <classShapeMoniker Id="29e9cd58-a741-41fc-b384-3c2706e4aa88" />
+        <classShapeMoniker Id="0ea19def-8c58-4f07-ac04-3e5b6c2b757b" />
+>>>>>>> 78582ef6cda6b85cc1cf21038a9e33feee6a90eb
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 2.13544840494792); (6.25 : 2.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbQLMonanDataContext/DONDATHANG/DONDATHANG_CHITIETDONTHANG" />
       <nodes>
+<<<<<<< HEAD
         <classShapeMoniker Id="61a95159-2a71-441c-bebd-f530d0330113" />
         <classShapeMoniker Id="71a45c2f-bb43-4af3-8e39-fd880a2e117c" />
+=======
+        <classShapeMoniker Id="c5868437-c07d-4368-9010-6f5b8de4336f" />
+        <classShapeMoniker Id="0ea19def-8c58-4f07-ac04-3e5b6c2b757b" />
+>>>>>>> 78582ef6cda6b85cc1cf21038a9e33feee6a90eb
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 2.13544840494792); (3.5 : 2.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbQLMonanDataContext/KHACHHANG/KHACHHANG_DONDATHANG" />
       <nodes>
+<<<<<<< HEAD
         <classShapeMoniker Id="5edecbe1-a25c-4866-84cc-7f5710f7a83b" />
         <classShapeMoniker Id="61a95159-2a71-441c-bebd-f530d0330113" />
+=======
+        <classShapeMoniker Id="5cee0b12-be22-44d7-9e90-b040956c634f" />
+        <classShapeMoniker Id="c5868437-c07d-4368-9010-6f5b8de4336f" />
+>>>>>>> 78582ef6cda6b85cc1cf21038a9e33feee6a90eb
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 7.47199625651042); (3.5 : 7.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbQLMonanDataContext/LOAIMON/LOAIMON_CTMONAN" />
       <nodes>
+<<<<<<< HEAD
         <classShapeMoniker Id="e467d801-9941-42d6-a937-e1383e40c0f1" />
         <classShapeMoniker Id="012126d1-2c36-4365-8c65-9e5efcc34e4e" />
+=======
+        <classShapeMoniker Id="838eaadc-97b0-44e6-a08a-d171895453ae" />
+        <classShapeMoniker Id="29e9cd58-a741-41fc-b384-3c2706e4aa88" />
+>>>>>>> 78582ef6cda6b85cc1cf21038a9e33feee6a90eb
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 4.94314697265625); (6.7187475 : 4.94314697265625); (6.7187475 : 3.02089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/dbQLMonanDataContext/Tb_Drink/Tb_Drink_CHITIETDONTHANG" />
       <nodes>
+<<<<<<< HEAD
         <classShapeMoniker Id="4a99e2f5-fab1-4c99-9563-2b11ea55b52d" />
         <classShapeMoniker Id="71a45c2f-bb43-4af3-8e39-fd880a2e117c" />
+=======
+        <classShapeMoniker Id="53123bde-60f5-4ebf-867f-9c35545619d2" />
+        <classShapeMoniker Id="0ea19def-8c58-4f07-ac04-3e5b6c2b757b" />
+>>>>>>> 78582ef6cda6b85cc1cf21038a9e33feee6a90eb
       </nodes>
     </associationConnector>
   </nestedChildShapes>
