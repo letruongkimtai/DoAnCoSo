@@ -12,6 +12,7 @@
         <td> Số lượng </td>
         <td> Đơn giá </td>
         <td> Thành tiền </td>
+        <td> Thức uống </td>
         <td width="50px"></td>
         <td width="50px"></td>
         <td width="50px"></td>
@@ -27,6 +28,7 @@
                 <td>
                     <input type="number" min="1" name="txtSoluong" value="@item.iSoluong" style="background-color:yellow" />
                 </td>
+                <td>@item.iMaThucUong</td>
                 <td>@String.Format("{0:0,0}", item.dDongia) </td>
                 <td>@String.Format("{0:0,0}", item.dThanhtien) </td>
                 <td> <a href="@Url.Action("Details", "Order", new { id = item.iMamon})"> Chi tiết </a></td>

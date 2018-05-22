@@ -45,6 +45,9 @@ namespace DoAn.Models
     partial void InsertLOAIMON(LOAIMON instance);
     partial void UpdateLOAIMON(LOAIMON instance);
     partial void DeleteLOAIMON(LOAIMON instance);
+    partial void InsertTb_Drink(Tb_Drink instance);
+    partial void UpdateTb_Drink(Tb_Drink instance);
+    partial void DeleteTb_Drink(Tb_Drink instance);
     #endregion
 		
 		public dbQLMonanDataContext() : 
@@ -116,6 +119,14 @@ namespace DoAn.Models
 				return this.GetTable<LOAIMON>();
 			}
 		}
+		
+		public System.Data.Linq.Table<Tb_Drink> Tb_Drinks
+		{
+			get
+			{
+				return this.GetTable<Tb_Drink>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHITIETDONTHANG")]
@@ -132,9 +143,13 @@ namespace DoAn.Models
 		
 		private System.Nullable<decimal> _Dongia;
 		
+		private int _MaThucUong;
+		
 		private EntityRef<CTMONAN> _CTMONAN;
 		
 		private EntityRef<DONDATHANG> _DONDATHANG;
+		
+		private EntityRef<Tb_Drink> _Tb_Drink;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -148,12 +163,15 @@ namespace DoAn.Models
     partial void OnSoluongChanged();
     partial void OnDongiaChanging(System.Nullable<decimal> value);
     partial void OnDongiaChanged();
+    partial void OnMaThucUongChanging(int value);
+    partial void OnMaThucUongChanged();
     #endregion
 		
 		public CHITIETDONTHANG()
 		{
 			this._CTMONAN = default(EntityRef<CTMONAN>);
 			this._DONDATHANG = default(EntityRef<DONDATHANG>);
+			this._Tb_Drink = default(EntityRef<Tb_Drink>);
 			OnCreated();
 		}
 		
@@ -245,6 +263,30 @@ namespace DoAn.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaThucUong", DbType="Int NOT NULL")]
+		public int MaThucUong
+		{
+			get
+			{
+				return this._MaThucUong;
+			}
+			set
+			{
+				if ((this._MaThucUong != value))
+				{
+					if (this._Tb_Drink.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMaThucUongChanging(value);
+					this.SendPropertyChanging();
+					this._MaThucUong = value;
+					this.SendPropertyChanged("MaThucUong");
+					this.OnMaThucUongChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CTMONAN_CHITIETDONTHANG", Storage="_CTMONAN", ThisKey="Mamon", OtherKey="Mamon", IsForeignKey=true)]
 		public CTMONAN CTMONAN
 		{
@@ -313,6 +355,40 @@ namespace DoAn.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tb_Drink_CHITIETDONTHANG", Storage="_Tb_Drink", ThisKey="MaThucUong", OtherKey="MaThucUong", IsForeignKey=true)]
+		public Tb_Drink Tb_Drink
+		{
+			get
+			{
+				return this._Tb_Drink.Entity;
+			}
+			set
+			{
+				Tb_Drink previousValue = this._Tb_Drink.Entity;
+				if (((previousValue != value) 
+							|| (this._Tb_Drink.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tb_Drink.Entity = null;
+						previousValue.CHITIETDONTHANGs.Remove(this);
+					}
+					this._Tb_Drink.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDONTHANGs.Add(this);
+						this._MaThucUong = value.MaThucUong;
+					}
+					else
+					{
+						this._MaThucUong = default(int);
+					}
+					this.SendPropertyChanged("Tb_Drink");
+				}
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -346,13 +422,11 @@ namespace DoAn.Models
 		
 		private System.Nullable<decimal> _Giaban;
 		
-		private System.Nullable<int> _Soluong;
-		
 		private string _Anh;
 		
 		private string _Trangthai;
 		
-		private string _Thucuong;
+		private string _Mota;
 		
 		private System.Nullable<int> _Maloai;
 		
@@ -370,14 +444,12 @@ namespace DoAn.Models
     partial void OnTenmonChanged();
     partial void OnGiabanChanging(System.Nullable<decimal> value);
     partial void OnGiabanChanged();
-    partial void OnSoluongChanging(System.Nullable<int> value);
-    partial void OnSoluongChanged();
     partial void OnAnhChanging(string value);
     partial void OnAnhChanged();
     partial void OnTrangthaiChanging(string value);
     partial void OnTrangthaiChanged();
-    partial void OnThucuongChanging(string value);
-    partial void OnThucuongChanged();
+    partial void OnMotaChanging(string value);
+    partial void OnMotaChanged();
     partial void OnMaloaiChanging(System.Nullable<int> value);
     partial void OnMaloaiChanged();
     #endregion
@@ -449,26 +521,6 @@ namespace DoAn.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Soluong", DbType="Int")]
-		public System.Nullable<int> Soluong
-		{
-			get
-			{
-				return this._Soluong;
-			}
-			set
-			{
-				if ((this._Soluong != value))
-				{
-					this.OnSoluongChanging(value);
-					this.SendPropertyChanging();
-					this._Soluong = value;
-					this.SendPropertyChanged("Soluong");
-					this.OnSoluongChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Anh", DbType="VarChar(50)")]
 		public string Anh
 		{
@@ -509,22 +561,22 @@ namespace DoAn.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Thucuong", DbType="NVarChar(10)")]
-		public string Thucuong
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mota", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string Mota
 		{
 			get
 			{
-				return this._Thucuong;
+				return this._Mota;
 			}
 			set
 			{
-				if ((this._Thucuong != value))
+				if ((this._Mota != value))
 				{
-					this.OnThucuongChanging(value);
+					this.OnMotaChanging(value);
 					this.SendPropertyChanging();
-					this._Thucuong = value;
-					this.SendPropertyChanged("Thucuong");
-					this.OnThucuongChanged();
+					this._Mota = value;
+					this.SendPropertyChanged("Mota");
+					this.OnMotaChanged();
 				}
 			}
 		}
@@ -1229,6 +1281,144 @@ namespace DoAn.Models
 		{
 			this.SendPropertyChanging();
 			entity.LOAIMON = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tb_Drinks")]
+	public partial class Tb_Drink : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MaThucUong;
+		
+		private string _TenThucUong;
+		
+		private System.Nullable<decimal> _GiaBan;
+		
+		private EntitySet<CHITIETDONTHANG> _CHITIETDONTHANGs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaThucUongChanging(int value);
+    partial void OnMaThucUongChanged();
+    partial void OnTenThucUongChanging(string value);
+    partial void OnTenThucUongChanged();
+    partial void OnGiaBanChanging(System.Nullable<decimal> value);
+    partial void OnGiaBanChanged();
+    #endregion
+		
+		public Tb_Drink()
+		{
+			this._CHITIETDONTHANGs = new EntitySet<CHITIETDONTHANG>(new Action<CHITIETDONTHANG>(this.attach_CHITIETDONTHANGs), new Action<CHITIETDONTHANG>(this.detach_CHITIETDONTHANGs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaThucUong", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MaThucUong
+		{
+			get
+			{
+				return this._MaThucUong;
+			}
+			set
+			{
+				if ((this._MaThucUong != value))
+				{
+					this.OnMaThucUongChanging(value);
+					this.SendPropertyChanging();
+					this._MaThucUong = value;
+					this.SendPropertyChanged("MaThucUong");
+					this.OnMaThucUongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenThucUong", DbType="NText", UpdateCheck=UpdateCheck.Never)]
+		public string TenThucUong
+		{
+			get
+			{
+				return this._TenThucUong;
+			}
+			set
+			{
+				if ((this._TenThucUong != value))
+				{
+					this.OnTenThucUongChanging(value);
+					this.SendPropertyChanging();
+					this._TenThucUong = value;
+					this.SendPropertyChanged("TenThucUong");
+					this.OnTenThucUongChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBan", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> GiaBan
+		{
+			get
+			{
+				return this._GiaBan;
+			}
+			set
+			{
+				if ((this._GiaBan != value))
+				{
+					this.OnGiaBanChanging(value);
+					this.SendPropertyChanging();
+					this._GiaBan = value;
+					this.SendPropertyChanged("GiaBan");
+					this.OnGiaBanChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tb_Drink_CHITIETDONTHANG", Storage="_CHITIETDONTHANGs", ThisKey="MaThucUong", OtherKey="MaThucUong")]
+		public EntitySet<CHITIETDONTHANG> CHITIETDONTHANGs
+		{
+			get
+			{
+				return this._CHITIETDONTHANGs;
+			}
+			set
+			{
+				this._CHITIETDONTHANGs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tb_Drink = this;
+		}
+		
+		private void detach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.Tb_Drink = null;
 		}
 	}
 }

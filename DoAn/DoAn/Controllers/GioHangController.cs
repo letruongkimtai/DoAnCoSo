@@ -19,13 +19,13 @@ namespace DoAn.Controllers
             }
             return lstGiohang;
         }       
-         public ActionResult ThemGiohang(int iMamon, string strURL)
+         public ActionResult ThemGiohang(int iMamon, string strURL,int iMaThucUong)
         {
              List<Giohang> lstGiohang = Laygiohang();
              Giohang sanpham = lstGiohang.Find(n => n.iMamon == iMamon);
                  if(sanpham==null)
                  {
-                     sanpham=new Giohang(iMamon);
+                     sanpham=new Giohang(iMamon,iMaThucUong);
                      lstGiohang.Add(sanpham);
                      return Redirect(strURL);             
                  }
@@ -40,7 +40,7 @@ namespace DoAn.Controllers
             List<Giohang> lstGiohang = Laygiohang();
             if (lstGiohang.Count == 0)
             {
-                return RedirectToAction("Index", "BookStore");
+                return RedirectToAction("Index", "Order");
             }
             ViewBag.Tongsoluong = TongSoLuong();
             ViewBag.Tongtien = TongTien();
