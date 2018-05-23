@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLMonan" Class="dbQLMonanDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QLMonan;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLMonanConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.LOAIMON" Member="LOAIMONs">
-    <Type Name="LOAIMON">
-      <Column Name="Maloai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Tenloai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="LOAIMON_CTMONAN" Member="CTMONANs" ThisKey="Maloai" OtherKey="Maloai" Type="CTMONAN" />
-    </Type>
-  </Table>
   <Table Name="dbo.CHITIETDONTHANG" Member="CHITIETDONTHANGs">
     <Type Name="CHITIETDONTHANG">
       <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -53,6 +46,13 @@
       <Column Name="Dienthoai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Ngaysinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="KHACHHANG_DONDATHANG" Member="DONDATHANGs" ThisKey="MaKH" OtherKey="MaKH" Type="DONDATHANG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAIMON" Member="LOAIMONs">
+    <Type Name="LOAIMON">
+      <Column Name="Maloai" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenloai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="LOAIMON_CTMONAN" Member="CTMONANs" ThisKey="Maloai" OtherKey="Maloai" Type="CTMONAN" />
     </Type>
   </Table>
 </Database>

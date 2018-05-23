@@ -30,9 +30,6 @@ namespace DoAn.Models
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertLOAIMON(LOAIMON instance);
-    partial void UpdateLOAIMON(LOAIMON instance);
-    partial void DeleteLOAIMON(LOAIMON instance);
     partial void InsertCHITIETDONTHANG(CHITIETDONTHANG instance);
     partial void UpdateCHITIETDONTHANG(CHITIETDONTHANG instance);
     partial void DeleteCHITIETDONTHANG(CHITIETDONTHANG instance);
@@ -45,6 +42,9 @@ namespace DoAn.Models
     partial void InsertKHACHHANG(KHACHHANG instance);
     partial void UpdateKHACHHANG(KHACHHANG instance);
     partial void DeleteKHACHHANG(KHACHHANG instance);
+    partial void InsertLOAIMON(LOAIMON instance);
+    partial void UpdateLOAIMON(LOAIMON instance);
+    partial void DeleteLOAIMON(LOAIMON instance);
     #endregion
 		
 		public dbQLMonanDataContext() : 
@@ -75,14 +75,6 @@ namespace DoAn.Models
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<LOAIMON> LOAIMONs
-		{
-			get
-			{
-				return this.GetTable<LOAIMON>();
-			}
 		}
 		
 		public System.Data.Linq.Table<CHITIETDONTHANG> CHITIETDONTHANGs
@@ -116,119 +108,13 @@ namespace DoAn.Models
 				return this.GetTable<KHACHHANG>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAIMON")]
-	public partial class LOAIMON : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Maloai;
-		
-		private string _Tenloai;
-		
-		private EntitySet<CTMONAN> _CTMONANs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaloaiChanging(int value);
-    partial void OnMaloaiChanged();
-    partial void OnTenloaiChanging(string value);
-    partial void OnTenloaiChanged();
-    #endregion
-		
-		public LOAIMON()
-		{
-			this._CTMONANs = new EntitySet<CTMONAN>(new Action<CTMONAN>(this.attach_CTMONANs), new Action<CTMONAN>(this.detach_CTMONANs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Maloai", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Maloai
+		public System.Data.Linq.Table<LOAIMON> LOAIMONs
 		{
 			get
 			{
-				return this._Maloai;
+				return this.GetTable<LOAIMON>();
 			}
-			set
-			{
-				if ((this._Maloai != value))
-				{
-					this.OnMaloaiChanging(value);
-					this.SendPropertyChanging();
-					this._Maloai = value;
-					this.SendPropertyChanged("Maloai");
-					this.OnMaloaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tenloai", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Tenloai
-		{
-			get
-			{
-				return this._Tenloai;
-			}
-			set
-			{
-				if ((this._Tenloai != value))
-				{
-					this.OnTenloaiChanging(value);
-					this.SendPropertyChanging();
-					this._Tenloai = value;
-					this.SendPropertyChanged("Tenloai");
-					this.OnTenloaiChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAIMON_CTMONAN", Storage="_CTMONANs", ThisKey="Maloai", OtherKey="Maloai")]
-		public EntitySet<CTMONAN> CTMONANs
-		{
-			get
-			{
-				return this._CTMONANs;
-			}
-			set
-			{
-				this._CTMONANs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CTMONANs(CTMONAN entity)
-		{
-			this.SendPropertyChanging();
-			entity.LOAIMON = this;
-		}
-		
-		private void detach_CTMONANs(CTMONAN entity)
-		{
-			this.SendPropertyChanging();
-			entity.LOAIMON = null;
 		}
 	}
 	
@@ -1229,6 +1115,120 @@ namespace DoAn.Models
 		{
 			this.SendPropertyChanging();
 			entity.KHACHHANG = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAIMON")]
+	public partial class LOAIMON : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Maloai;
+		
+		private string _Tenloai;
+		
+		private EntitySet<CTMONAN> _CTMONANs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaloaiChanging(int value);
+    partial void OnMaloaiChanged();
+    partial void OnTenloaiChanging(string value);
+    partial void OnTenloaiChanged();
+    #endregion
+		
+		public LOAIMON()
+		{
+			this._CTMONANs = new EntitySet<CTMONAN>(new Action<CTMONAN>(this.attach_CTMONANs), new Action<CTMONAN>(this.detach_CTMONANs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Maloai", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Maloai
+		{
+			get
+			{
+				return this._Maloai;
+			}
+			set
+			{
+				if ((this._Maloai != value))
+				{
+					this.OnMaloaiChanging(value);
+					this.SendPropertyChanging();
+					this._Maloai = value;
+					this.SendPropertyChanged("Maloai");
+					this.OnMaloaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tenloai", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Tenloai
+		{
+			get
+			{
+				return this._Tenloai;
+			}
+			set
+			{
+				if ((this._Tenloai != value))
+				{
+					this.OnTenloaiChanging(value);
+					this.SendPropertyChanging();
+					this._Tenloai = value;
+					this.SendPropertyChanged("Tenloai");
+					this.OnTenloaiChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAIMON_CTMONAN", Storage="_CTMONANs", ThisKey="Maloai", OtherKey="Maloai")]
+		public EntitySet<CTMONAN> CTMONANs
+		{
+			get
+			{
+				return this._CTMONANs;
+			}
+			set
+			{
+				this._CTMONANs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_CTMONANs(CTMONAN entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAIMON = this;
+		}
+		
+		private void detach_CTMONANs(CTMONAN entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAIMON = null;
 		}
 	}
 }
