@@ -15,11 +15,22 @@ namespace DoAn.Controllers
         {
             return data.CTMONANs.OrderByDescending(a => a.Giaban).Take(count).ToList();
         }
+        private List<HOTDISH> LaySanPhamBanChay(int count)
+        {
+            return data.HOTDISHes.OrderByDescending(a => a.SOLUONGMUA).Take(count).ToList();
+        }
         public ActionResult Index()
+
         {
             var NewDish = Laymonanmoi(4);
 
             return View(NewDish);
+        }
+        public ActionResult HOTDISH()
+        {
+            
+            var dish = LaySanPhamBanChay(4);
+            return PartialView(dish);
         }
         public ActionResult SPTheoloai(int id)
         {
