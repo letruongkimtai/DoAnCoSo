@@ -22,15 +22,14 @@
             <td> @item.iMamon </td>
             <td> @item.sTenmon</td>
             <td><img src="~/images2/@item.sAnh" style="height:60px;width:60px"></td>
-            @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iMamon}))
+            @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iMamon }))
             {
                 <td>
                     <input type="number" min="1" name="txtSoluong" value="@item.iSoluong" style="background-color:yellow" />
-                </td>                  
+                </td>
                 <td>@String.Format("{0:0,0}", item.dDongia) </td>
                 <td>@String.Format("{0:0,0}", item.dThanhtien) </td>
                 <td> <a href="@Url.Action("Details", "Order", new { id = item.iMamon})"> Chi tiết </a></td>
-                <td> <a href="@Url.Action("SPTheoloai/5","Order")"> Thêm nước </a></td>
                 <td> @Html.ActionLink("Xóa", "XoaGiohang", new { @iMaSp = item.iMamon })</td>
                 <td> <input type="submit" value="Cập Nhật" /></td>
             }

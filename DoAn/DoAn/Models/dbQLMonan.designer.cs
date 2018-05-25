@@ -45,6 +45,9 @@ namespace DoAn.Models
     partial void InsertLOAIMON(LOAIMON instance);
     partial void UpdateLOAIMON(LOAIMON instance);
     partial void DeleteLOAIMON(LOAIMON instance);
+    partial void InsertTb_Drink(Tb_Drink instance);
+    partial void UpdateTb_Drink(Tb_Drink instance);
+    partial void DeleteTb_Drink(Tb_Drink instance);
     #endregion
 		
 		public dbQLMonanDataContext() : 
@@ -94,21 +97,10 @@ namespace DoAn.Models
 		}
 		
 		public System.Data.Linq.Table<DONDATHANG> DONDATHANGs
-<<<<<<< HEAD
 		{
 			get
 			{
 				return this.GetTable<DONDATHANG>();
-			}
-		}
-		
-		public System.Data.Linq.Table<KHACHHANG> KHACHHANGs
-=======
->>>>>>> 9d2926018fcf0fda040851d7e13bca009b90b490
-		{
-			get
-			{
-				return this.GetTable<KHACHHANG>();
 			}
 		}
 		
@@ -125,6 +117,14 @@ namespace DoAn.Models
 			get
 			{
 				return this.GetTable<LOAIMON>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Tb_Drink> Tb_Drinks
+		{
+			get
+			{
+				return this.GetTable<Tb_Drink>();
 			}
 		}
 		
@@ -157,6 +157,8 @@ namespace DoAn.Models
 		
 		private EntityRef<DONDATHANG> _DONDATHANG;
 		
+		private EntityRef<Tb_Drink> _Tb_Drink;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -177,6 +179,7 @@ namespace DoAn.Models
 		{
 			this._CTMONAN = default(EntityRef<CTMONAN>);
 			this._DONDATHANG = default(EntityRef<DONDATHANG>);
+			this._Tb_Drink = default(EntityRef<Tb_Drink>);
 			OnCreated();
 		}
 		
@@ -279,6 +282,10 @@ namespace DoAn.Models
 			{
 				if ((this._MaThucUong != value))
 				{
+					if (this._Tb_Drink.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMaThucUongChanging(value);
 					this.SendPropertyChanging();
 					this._MaThucUong = value;
@@ -352,6 +359,40 @@ namespace DoAn.Models
 						this._MaDonHang = default(int);
 					}
 					this.SendPropertyChanged("DONDATHANG");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Tb_Drink_CHITIETDONTHANG", Storage="_Tb_Drink", ThisKey="MaThucUong", OtherKey="MaThucUong", IsForeignKey=true)]
+		public Tb_Drink Tb_Drink
+		{
+			get
+			{
+				return this._Tb_Drink.Entity;
+			}
+			set
+			{
+				Tb_Drink previousValue = this._Tb_Drink.Entity;
+				if (((previousValue != value) 
+							|| (this._Tb_Drink.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Tb_Drink.Entity = null;
+						previousValue.CHITIETDONTHANGs.Remove(this);
+					}
+					this._Tb_Drink.Entity = value;
+					if ((value != null))
+					{
+						value.CHITIETDONTHANGs.Add(this);
+						this._MaThucUong = value.MaThucUong;
+					}
+					else
+					{
+						this._MaThucUong = default(int);
+					}
+					this.SendPropertyChanged("Tb_Drink");
 				}
 			}
 		}
@@ -654,7 +695,6 @@ namespace DoAn.Models
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DONDATHANG")]
 	public partial class DONDATHANG : INotifyPropertyChanging, INotifyPropertyChanged
-<<<<<<< HEAD
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -882,248 +922,10 @@ namespace DoAn.Models
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KHACHHANG")]
 	public partial class KHACHHANG : INotifyPropertyChanging, INotifyPropertyChanged
-=======
->>>>>>> 9d2926018fcf0fda040851d7e13bca009b90b490
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _MaDonHang;
-		
-		private System.Nullable<bool> _Dathanhtoan;
-		
-		private System.Nullable<bool> _Tinhtranggiaohang;
-		
-		private System.Nullable<System.DateTime> _Ngaydat;
-		
-		private System.Nullable<int> _MaKH;
-		
-		private EntitySet<CHITIETDONTHANG> _CHITIETDONTHANGs;
-		
-		private EntityRef<KHACHHANG> _KHACHHANG;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaDonHangChanging(int value);
-    partial void OnMaDonHangChanged();
-    partial void OnDathanhtoanChanging(System.Nullable<bool> value);
-    partial void OnDathanhtoanChanged();
-    partial void OnTinhtranggiaohangChanging(System.Nullable<bool> value);
-    partial void OnTinhtranggiaohangChanged();
-    partial void OnNgaydatChanging(System.Nullable<System.DateTime> value);
-    partial void OnNgaydatChanged();
-    partial void OnMaKHChanging(System.Nullable<int> value);
-    partial void OnMaKHChanged();
-    #endregion
-		
-		public DONDATHANG()
-		{
-			this._CHITIETDONTHANGs = new EntitySet<CHITIETDONTHANG>(new Action<CHITIETDONTHANG>(this.attach_CHITIETDONTHANGs), new Action<CHITIETDONTHANG>(this.detach_CHITIETDONTHANGs));
-			this._KHACHHANG = default(EntityRef<KHACHHANG>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDonHang", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaDonHang
-		{
-			get
-			{
-				return this._MaDonHang;
-			}
-			set
-			{
-				if ((this._MaDonHang != value))
-				{
-					this.OnMaDonHangChanging(value);
-					this.SendPropertyChanging();
-					this._MaDonHang = value;
-					this.SendPropertyChanged("MaDonHang");
-					this.OnMaDonHangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dathanhtoan", DbType="Bit")]
-		public System.Nullable<bool> Dathanhtoan
-		{
-			get
-			{
-				return this._Dathanhtoan;
-			}
-			set
-			{
-				if ((this._Dathanhtoan != value))
-				{
-					this.OnDathanhtoanChanging(value);
-					this.SendPropertyChanging();
-					this._Dathanhtoan = value;
-					this.SendPropertyChanged("Dathanhtoan");
-					this.OnDathanhtoanChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tinhtranggiaohang", DbType="Bit")]
-		public System.Nullable<bool> Tinhtranggiaohang
-		{
-			get
-			{
-				return this._Tinhtranggiaohang;
-			}
-			set
-			{
-				if ((this._Tinhtranggiaohang != value))
-				{
-					this.OnTinhtranggiaohangChanging(value);
-					this.SendPropertyChanging();
-					this._Tinhtranggiaohang = value;
-					this.SendPropertyChanged("Tinhtranggiaohang");
-					this.OnTinhtranggiaohangChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ngaydat", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Ngaydat
-		{
-			get
-			{
-				return this._Ngaydat;
-			}
-			set
-			{
-				if ((this._Ngaydat != value))
-				{
-					this.OnNgaydatChanging(value);
-					this.SendPropertyChanging();
-					this._Ngaydat = value;
-					this.SendPropertyChanged("Ngaydat");
-					this.OnNgaydatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaKH", DbType="Int")]
-		public System.Nullable<int> MaKH
-		{
-			get
-			{
-				return this._MaKH;
-			}
-			set
-			{
-				if ((this._MaKH != value))
-				{
-					if (this._KHACHHANG.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMaKHChanging(value);
-					this.SendPropertyChanging();
-					this._MaKH = value;
-					this.SendPropertyChanged("MaKH");
-					this.OnMaKHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DONDATHANG_CHITIETDONTHANG", Storage="_CHITIETDONTHANGs", ThisKey="MaDonHang", OtherKey="MaDonHang")]
-		public EntitySet<CHITIETDONTHANG> CHITIETDONTHANGs
-		{
-			get
-			{
-				return this._CHITIETDONTHANGs;
-			}
-			set
-			{
-				this._CHITIETDONTHANGs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DONDATHANG", Storage="_KHACHHANG", ThisKey="MaKH", OtherKey="MaKH", IsForeignKey=true)]
-		public KHACHHANG KHACHHANG
-		{
-			get
-			{
-				return this._KHACHHANG.Entity;
-			}
-			set
-			{
-				KHACHHANG previousValue = this._KHACHHANG.Entity;
-				if (((previousValue != value) 
-							|| (this._KHACHHANG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._KHACHHANG.Entity = null;
-						previousValue.DONDATHANGs.Remove(this);
-					}
-					this._KHACHHANG.Entity = value;
-					if ((value != null))
-					{
-						value.DONDATHANGs.Add(this);
-						this._MaKH = value.MaKH;
-					}
-					else
-					{
-						this._MaKH = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("KHACHHANG");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
-		{
-			this.SendPropertyChanging();
-			entity.DONDATHANG = this;
-		}
-		
-		private void detach_CHITIETDONTHANGs(CHITIETDONTHANG entity)
-		{
-			this.SendPropertyChanging();
-			entity.DONDATHANG = null;
-		}
-	}
-	
-<<<<<<< HEAD
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAIMON")]
-	public partial class LOAIMON : INotifyPropertyChanging, INotifyPropertyChanged
-=======
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KHACHHANG")]
-	public partial class KHACHHANG : INotifyPropertyChanging, INotifyPropertyChanged
->>>>>>> 9d2926018fcf0fda040851d7e13bca009b90b490
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-<<<<<<< HEAD
-		private int _Maloai;
-		
-=======
 		private int _MaKH;
 		
 		private string _HoTen;
@@ -1384,7 +1186,6 @@ namespace DoAn.Models
 		
 		private int _Maloai;
 		
->>>>>>> 9d2926018fcf0fda040851d7e13bca009b90b490
 		private string _Tenloai;
 		
 		private EntitySet<CTMONAN> _CTMONANs;
@@ -1490,7 +1291,6 @@ namespace DoAn.Models
 			entity.LOAIMON = null;
 		}
 	}
-<<<<<<< HEAD
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tb_Drinks")]
 	public partial class Tb_Drink : INotifyPropertyChanging, INotifyPropertyChanged
@@ -1728,7 +1528,5 @@ namespace DoAn.Models
 			}
 		}
 	}
-=======
->>>>>>> 9d2926018fcf0fda040851d7e13bca009b90b490
 }
 #pragma warning restore 1591

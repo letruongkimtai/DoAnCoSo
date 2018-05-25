@@ -9,6 +9,7 @@
       <Column Name="MaThucUong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="CTMONAN_CHITIETDONTHANG" Member="CTMONAN" ThisKey="Mamon" OtherKey="Mamon" Type="CTMONAN" IsForeignKey="true" />
       <Association Name="DONDATHANG_CHITIETDONTHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" IsForeignKey="true" />
+      <Association Name="Tb_Drink_CHITIETDONTHANG" Member="Tb_Drink" ThisKey="MaThucUong" OtherKey="MaThucUong" Type="Tb_Drink" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.CTMONAN" Member="CTMONANs">
@@ -55,7 +56,6 @@
       <Association Name="LOAIMON_CTMONAN" Member="CTMONANs" ThisKey="Maloai" OtherKey="Maloai" Type="CTMONAN" />
     </Type>
   </Table>
-<<<<<<< HEAD
   <Table Name="dbo.Tb_Drinks" Member="Tb_Drinks">
     <Type Name="Tb_Drink">
       <Column Name="MaThucUong" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -73,6 +73,4 @@
       <Column Name="SOLUONGMUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
-=======
->>>>>>> 9d2926018fcf0fda040851d7e13bca009b90b490
 </Database>

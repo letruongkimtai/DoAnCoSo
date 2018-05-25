@@ -311,12 +311,7 @@
     <Content Include="Views\Order\Details.cshtml" />
     <Content Include="Views\Giohang\GioHang.cshtml" />
     <Content Include="Views\Giohang\GiohangPartial.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Order\HOTDISH.cshtml" />
-=======
-    <Content Include="Views\Giohang\DatHang.cshtml" />
-    <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
->>>>>>> 9d2926018fcf0fda040851d7e13bca009b90b490
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
