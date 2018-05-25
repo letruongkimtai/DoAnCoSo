@@ -40,7 +40,7 @@ namespace DoAn.Controllers
             List<Giohang> lstGiohang = Laygiohang();
             if (lstGiohang.Count == 0)
             {
-                return RedirectToAction("Index", "BookStore");
+                return RedirectToAction("Index", "Order");
             }
             ViewBag.Tongsoluong = TongSoLuong();
             ViewBag.Tongtien = TongTien();
@@ -113,7 +113,7 @@ namespace DoAn.Controllers
             }
             if (Session["Giohang"] == null)
             {
-                return RedirectToAction("Index", "BookStore");
+                return RedirectToAction("Index", "Order");
             }
             List<Giohang> lstGiohang = Laygiohang();
             ViewBag.Tongsoluong = TongSoLuong();
@@ -127,7 +127,7 @@ namespace DoAn.Controllers
             DONDATHANG ddh = new DONDATHANG();
             KHACHHANG kh =(KHACHHANG) Session["Taikhoan"];
             List<Giohang> gh = Laygiohang();
-            ddh.MaKH = kh.MaKH;            
+            ddh.MaKH = kh.MaKH;
             ddh.Ngaydat = DateTime.Now;
             ddh.Tinhtranggiaohang = false;
             ddh.Dathanhtoan = false;
