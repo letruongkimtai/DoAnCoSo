@@ -283,6 +283,7 @@
     <Content Include="Scripts\waypoint.min.js" />
     <Content Include="Views\Shared\Detail.html" />
     <Content Include="Views\Shared\index.html" />
+    <Content Include="Views\Shared\Loai.html" />
     <Content Include="Views\Shared\Signup.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -312,6 +313,7 @@
     <Content Include="Views\Giohang\GioHang.cshtml" />
     <Content Include="Views\Giohang\GiohangPartial.cshtml" />
     <Content Include="Views\Order\HOTDISH.cshtml" />
+    <Content Include="Views\Shared\_LayoutCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
