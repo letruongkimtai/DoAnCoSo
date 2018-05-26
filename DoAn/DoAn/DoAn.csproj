@@ -156,7 +156,6 @@
       <DependentUpon>dbQLMonan.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\Giohang.cs" />
-    <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -284,7 +283,6 @@
     <Content Include="Scripts\waypoint.min.js" />
     <Content Include="Views\Shared\Detail.html" />
     <Content Include="Views\Shared\index.html" />
-    <Content Include="Views\Shared\Loai.html" />
     <Content Include="Views\Shared\Signup.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -314,12 +312,6 @@
     <Content Include="Views\Giohang\GioHang.cshtml" />
     <Content Include="Views\Giohang\GiohangPartial.cshtml" />
     <Content Include="Views\Order\HOTDISH.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\Shared\_LayoutCategory.cshtml" />
-=======
-    <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
-    <Content Include="Views\Giohang\DatHang.cshtml" />
->>>>>>> 5eaef0f3dbf6539e51d1d7d7b9b32d109e159c9d
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
