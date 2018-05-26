@@ -31,6 +31,7 @@
                 </td>
                 <td>@String.Format("{0:0,0}", item.dDongia) </td>
                 <td>@String.Format("{0:0,0}", item.dThanhtien) </td>
+                <td> <a href="@Url.Action("SPTheoloai/5", "Order")"> Thêm nước </a></td>
                 <td> <a href="@Url.Action("Details", "Order", new { id = item.iMamon})"> Chi tiết </a></td>
                 <td> @Html.ActionLink("Xóa", "XoaGiohang", new { @iMaSp = item.iMamon })</td>
                 <td> <input type="submit" value="Cập Nhật" /></td>
