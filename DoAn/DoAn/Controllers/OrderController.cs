@@ -56,12 +56,5 @@ namespace DoAn.Controllers
                        select s;
             return View(dish.Single());
         }
-
-        public ActionResult MainMenu()
-        {
-            var dish = from s in data.LOAIMONs
-                       select s;
-            return View(dish);
-        }
     }
 }

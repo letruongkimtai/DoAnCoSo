@@ -167,7 +167,6 @@
     <Content Include="Content\owl.carousel.css" />
     <Content Include="Content\owl.carousel.min.css" />
     <Content Include="Content\owl.theme.default.min.css" />
-    <Content Include="Images2\burger xuc xich.jpg" />
     <Content Include="Scripts\owl.carousel.js" />
     <Content Include="Content\owl.theme.default.css" />
     <Content Include="Content\product-slider.css" />
@@ -284,7 +283,6 @@
     <Content Include="Scripts\waypoint.min.js" />
     <Content Include="Views\Shared\Detail.html" />
     <Content Include="Views\Shared\index.html" />
-    <Content Include="Views\Shared\Loai.html" />
     <Content Include="Views\Shared\Signup.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -302,6 +300,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\SPTheoloai.cshtml" />
     <Content Include="Views\Order\Loai.cshtml" />
     <Content Include="Views\Shared\_LayoutSignup.cshtml" />
     <Content Include="Views\Nguoidung\Dangky.cshtml" />
@@ -313,14 +312,8 @@
     <Content Include="Views\Giohang\GioHang.cshtml" />
     <Content Include="Views\Giohang\GiohangPartial.cshtml" />
     <Content Include="Views\Order\HOTDISH.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Views\Shared\_LayoutMenu.cshtml" />
-    <Content Include="Views\Order\SPTheoloai.cshtml" />
-    <Content Include="Views\Order\MainMenu.cshtml" />
-=======
     <Content Include="Views\Giohang\DatHang.cshtml" />
     <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
->>>>>>> 561e92bea32aaf8827c0576d171909be4306aa63
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
