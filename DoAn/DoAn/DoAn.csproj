@@ -156,7 +156,6 @@
       <DependentUpon>dbQLMonan.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\Giohang.cs" />
-    <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
