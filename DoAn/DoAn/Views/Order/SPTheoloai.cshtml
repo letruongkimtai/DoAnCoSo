@@ -1,49 +1,30 @@
-﻿<style type="text/css">
-    #Datmua a {
-        clear: both;
-        background-color: chocolate;
-        color: white;
-        width: 120px;
-        height: 35px;
-        display: block;
-        float: right;
-        text-align: center;
-        padding-top: 10px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-        #Datmua a:hover {
-            background-color: white;
-            color: black;
-        }
-</style>
-@model IEnumerable<DoAn.Models.CTMONAN>
+﻿@model IEnumerable<DoAn.Models.CTMONAN>
 @{
     ViewBag.Title = "SPTheoloai";
-    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
 }
 
-<h3 style="Text-align:Center; color:red"> MÓN ĂN THEO YÊU CẦU </h3>
-<div class="row">
-    @foreach (var monan in Model)
-    {
-        <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail">
-                <a href="@Url.Action("Details", "Order", new { id = monan.Mamon })">
-                    <img alt="@monan.Tenmon" src="~/Images2/@monan.Anh" width="200" />
-                    <div>
-                        <br />
-                        <h4 style="text-align:center">
-                            @monan.Tenmon
-                        </h4>
-                        <p></p>
-                        <a id="Datmua" href="@Url.Action("ThemGiohang", "GioHang", new { @iMamon= @monan.Mamon, @strURL=Request.Url.ToString() })" class="list-group-item">
-                            ĐẶT MUA
-                        </a>
-                    </div>        
-            </div>
-        </div>
-    }
-</div>
 
+
+<div class="col-md-9 shop-section">
+    <div class="row articles">
+        @foreach (var dish in Model)
+        {
+
+            <div class="col-md-4 col-sm-6" style="margin-top:30px;">
+                <img class="img-responsive" src="~/Images2/@dish.Anh" style="height:270px">
+                <div class="text">
+                    <a href="http://localhost:59620/Order/DeTails/@dish.Mamon">
+                        <span style="font-size:17px;">
+                            @dish.Tenmon
+                        </span>
+                    </a>
+                    <p>
+                        @dish.Giaban.000đ
+                    </p>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
