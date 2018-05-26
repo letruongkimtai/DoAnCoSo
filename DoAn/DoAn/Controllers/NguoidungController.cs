@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DoAn.Models;
-namespace DoAn.Controllers
+namespace MvcBookStore.Controllers
 {
     public class NguoidungController : Controller
     {
@@ -24,6 +24,16 @@ namespace DoAn.Controllers
         [HttpPost]
         public ActionResult Dangky(FormCollection collection,KHACHHANG kh)
         {
+
+            /*var hoten = collection["HotenKH"];
+            var tendn = collection["TenDN"];
+            var matkhau = collection["Matkhau"];
+            var matkhaunhaplai = collection["Matkhaunhaplai"];
+            var diachi = collection["Diachi"];
+            var email = collection["Email"];
+            var dienthoai = collection["Dienthoai"];
+            var ngaysinh =String.Format("{0:MM/dd/yyyy}",collection["Ngaysinh"]);*/
+
             var hoten = collection.Get("HotenKH");
             var tendn = collection.Get("TenDN");
             var matkhau = collection.Get("Matkhau");
@@ -88,12 +98,12 @@ namespace DoAn.Controllers
             KHACHHANG kh = db.KHACHHANGs.SingleOrDefault(n => n.Taikhoan == tendn && n.Matkhau == matkhau);
             if (kh != null)
             {
-                
+                //ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
                 Session["Taikhoan"] = kh;
-                return RedirectToAction("Giohang", "Giohang");
+                return RedirectToAction("Index", "Order");
             }
-            else ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";
             return View();
         }
+
     }
 }
