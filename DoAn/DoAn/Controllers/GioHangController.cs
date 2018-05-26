@@ -94,7 +94,7 @@ namespace DoAn.Controllers
             }
             if (lstGiohang.Count == 0)
             {
-                return RedirectToAction("Index", "BookStore");
+                return RedirectToAction("Index", "Order");
             }
             return RedirectToAction("GioHang");
         }
@@ -102,7 +102,7 @@ namespace DoAn.Controllers
         {
             List<Giohang> lstGiohang = Laygiohang();
             lstGiohang.Clear();
-            return RedirectToAction("Index", "BookStore");
+            return RedirectToAction("Index", "Order");
         }
         [HttpGet]
         public ActionResult DatHang()
@@ -113,7 +113,7 @@ namespace DoAn.Controllers
             }
             if (Session["Giohang"] == null)
             {
-                return RedirectToAction("Index", "BookStore");
+                return RedirectToAction("Index", "Order");
             }
             List<Giohang> lstGiohang = Laygiohang();
             ViewBag.Tongsoluong = TongSoLuong();
