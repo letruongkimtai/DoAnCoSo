@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<DoAn.Models.LOAIMON>
-<div class="list-group">
+<div class="list-group" style="margin-bottom:-5px;">
     @foreach (var item in Model)
     {
-        <a href="@Url.Action("SPTheoloai","Order",new { id=item.Maloai})" class="list-group-item">
+        <a href="@Url.Action("SPTheoloai","Order",new { id=item.Maloai})" class="list-group-item" style="margin-bottom: -5px;">
             @item.Tenloai
         </a>
     }
