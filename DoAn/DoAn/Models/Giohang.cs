@@ -29,7 +29,6 @@ namespace DoAn.Models
             CTMONAN monan = data.CTMONANs.Single(n => n.Mamon == iMamon);
             sTenmon = monan.Tenmon;
             sAnh = monan.Anh;
-            //sThucuong = monan.Thucuong;
             dDongia =double.Parse(monan.Giaban.ToString());
             iSoluong = 1;
         }
