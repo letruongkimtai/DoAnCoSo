@@ -2,7 +2,14 @@
 <div class="list-group" style="margin-bottom:-5px;">
     @foreach (var item in Model)
     {
-        <a href="@Url.Action("SPTheoloai","Order",new { id=item.Maloai})" class="list-group-item" style="margin-bottom: -5px;">
+        <a href="@Url.Action("SPTheoloai","Order",new { id=item.Maloai})" class="list-group-item" style="margin-bottom: -5px;color: #000000 !important;
+    font-weight: bold!important;
+    font-size: 13px!important;
+    text-transform: uppercase!important;
+    -webkit-border-radius: 4px!important;
+    -moz-border-radius: 4px!important;
+    border-radius: 4px!important;
+}">
             @item.Tenloai
         </a>
     }
