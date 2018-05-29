@@ -143,7 +143,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoidungController.cs" />
@@ -162,49 +161,13 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap\css\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap\css\bootstrap.css" />
-    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
-    <Content Include="Content\bootstrap\js\bootstrap.bundle.js" />
-    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js" />
-    <Content Include="Content\bootstrap\js\bootstrap.js" />
-    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\flexslider.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\owl.carousel.css" />
     <Content Include="Content\owl.carousel.min.css" />
     <Content Include="Content\owl.theme.default.min.css" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Content Include="Scripts\jquery-easing\jquery.easing.compatibility.js" />
-    <Content Include="Scripts\jquery-easing\jquery.easing.js" />
-    <Content Include="Scripts\jquery-easing\jquery.easing.min.js" />
-    <Content Include="Scripts\jquery\jquery.js" />
-    <Content Include="Scripts\jquery\jquery.min.js" />
-    <Content Include="Scripts\jquery\jquery.slim.js" />
-    <Content Include="Scripts\jquery\jquery.slim.min.js" />
-=======
     <Content Include="Images2\Logo.png" />
->>>>>>> f66bc7897cd9571b7065f592ee11911015763ce3
-=======
-    <Content Include="Images2\Logo.png" />
->>>>>>> f66bc7897cd9571b7065f592ee11911015763ce3
-=======
-    <Content Include="Images2\Logo.png" />
->>>>>>> f66bc7897cd9571b7065f592ee11911015763ce3
-=======
-    <Content Include="Images2\Logo.png" />
->>>>>>> f66bc7897cd9571b7065f592ee11911015763ce3
-=======
-    <Content Include="Images2\Logo.png" />
->>>>>>> f66bc7897cd9571b7065f592ee11911015763ce3
     <Content Include="Scripts\owl.carousel.js" />
     <Content Include="Content\owl.theme.default.css" />
     <Content Include="Content\product-slider.css" />
@@ -296,12 +259,6 @@
       <LastGenOutput>dbQLMonan.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Content\bootstrap\css\bootstrap.css.map" />
-    <Content Include="Content\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap\js\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js.map" />
-    <Content Include="Content\bootstrap\js\bootstrap.js.map" />
-    <Content Include="Content\bootstrap\js\bootstrap.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\gmap3.min.js" />
     <Content Include="Scripts\images\bg_play_pause.png" />
@@ -360,9 +317,6 @@
     <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
     <Content Include="Views\Shared\_LayoutMenu.cshtml" />
     <Content Include="Views\Order\SPTheoloai.cshtml" />
-    <Content Include="Views\Admin\Login.cshtml" />
-    <Content Include="Scripts\jquery\jquery.min.map" />
-    <Content Include="Scripts\jquery\jquery.slim.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
