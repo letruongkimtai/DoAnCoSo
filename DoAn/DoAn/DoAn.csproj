@@ -182,6 +182,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Content Include="Scripts\jquery-easing\jquery.easing.compatibility.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.min.js" />
@@ -189,6 +190,9 @@
     <Content Include="Scripts\jquery\jquery.min.js" />
     <Content Include="Scripts\jquery\jquery.slim.js" />
     <Content Include="Scripts\jquery\jquery.slim.min.js" />
+=======
+    <Content Include="Images2\Logo.png" />
+>>>>>>> f66bc7897cd9571b7065f592ee11911015763ce3
 =======
     <Content Include="Images2\Logo.png" />
 >>>>>>> f66bc7897cd9571b7065f592ee11911015763ce3
