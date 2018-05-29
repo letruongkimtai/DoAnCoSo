@@ -28,7 +28,7 @@
 </head>
 <body>
     <!--top-strip-->
-    <div class="top-strip">
+    <div class="top-strip" style="background:#920000">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 user">
@@ -44,31 +44,31 @@
     </div>
     <!--end-top-strip-->
     <!--navbar-->
-    <div class="container header">
-        <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+    <div class="container header" style="height:87.5px;">
+        <nav id="myNavbar" class="navbar navbar-default" role="navigation" style="height: 40px;">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="margin-top:-25px;">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://localhost:59620/Order/Index"><img src="~/images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="http://localhost:59620/Order/Index"><img style="margin-top:-60px;" width="100" height="100" src="~/Images2/Logo.png" alt="logo"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="http://localhost:59620/Order/Index">Trang chủ</a></li>
+                        <li class="active"><a href="http://localhost:59620/Order/Index"style="margin-top: -25px;">Trang chủ</a></li>
                         <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Thực đơn</a>
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle" style="margin-top: -25px;">Thực đơn</a>
                             <ul class="dropdown-menu">
                                 @Html.Action("Loai", "Order")
                             </ul>
                         </li>
-                        <li>@Html.Action("GiohangPartial", "Giohang")</li>
-                        <li><a href="about.html">Khuyến mãi</a></li>
-                        <li><a href="contact.html">Cửa hàng</a></li>
+                        <li style="margin-top: -25px;">@Html.Action("GiohangPartial", "Giohang")</li>
+                        <li><a href="about.html" style="margin-top: -25px;">Khuyến mãi</a></li>
+                        <li><a href="contact.html" style="margin-top: -25px;">Cửa hàng</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -78,7 +78,7 @@
     <!--end-navbar-->
     <!--flex-slider-->
     <div class="main-flexslider">
-        <ul class="slides">
+        <ul class="slides"     style="margin-top: -3.8px;">
             <li class="slides">
                 <img src="~/images/slide-01.jpg" alt="slide 01">
                 <div class="slide-caption">
@@ -145,13 +145,13 @@
     <!--prize-->
     <!--end-prize-->
     <!--footer-->
-    <div class="full-footer">
-        <div class="container-full">
-            <div class="container info">
+    <div class="full-footer" style="background:#690505;">
+        <div class="container-full" style="background:#961515;">
+            <div class="container info" style="background:#961515;">
                 <div class="row">
                     <div class="col-md-4 addres">
-                        <img src="~/images/footer-logo.png" alt="logo">
-                        <h6>Double King Burger</h6>
+                        <img style="margin-top:-40.5px;" height="100" width="100" src="~/Images2/Logo.png" alt="logo">
+                        <h6 style="color:#ffffff;"> Double King Burger</h6>
                         <p>
                             360 Nguyễn Sơn, Quận Tân Bình, TP.HCM
                         </p>
@@ -188,15 +188,15 @@
             <div class="row bottom-strip">
                 <div class="col-md-6 rights">
                     <p>
-                        Copyright 2017 DK Corporation. All Rights Reserved.
+                        Copyright 2017 Double King Corporation. All Rights Reserved.
                     </p>
                 </div>
                 <div class="col-md-6 social">
                     <ul>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-asterisk"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble" style="color:white;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" style="color:white;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-asterisk" style="color:white;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook-square" style="color:white;"></i></a></li>
                     </ul>
                 </div>
             </div>
