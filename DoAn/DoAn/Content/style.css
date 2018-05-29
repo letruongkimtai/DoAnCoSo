@@ -381,7 +381,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 body {
     line-height: 1;
     font-family: Open Sans;
-    background: #ffffff !important;
+    background: #690505 !important;
 }
 ol,ul {
   list-style:none;
@@ -466,7 +466,7 @@ a {
 }
 .navbar-default {
     border: none !important;
-    background: #c11b1b!important;
+    background: #c11b1b !important;
     padding: 26px 0px 16px 0 !important;
     margin-top: 20px !important;
 }
@@ -1324,19 +1324,19 @@ ul.product-list li.price {
   margin-top:5px;
   margin-bottom:30px;
 }
-.shop-widget h4 {
-  color:#e7e5de;
-  font-size:13px;
-  text-transform:uppercase;
-  font-weight:bold;
-  -webkit-font-smoothing:antialiased;
-  padding:16px 21px;
-  background:#5a423b;
-  -webkit-border-radius:3px;
-  -moz-border-radius:3px;
-  border-radius:3px;
-  text-align:center;
-}
+    .shop-widget h4 {
+        color: #e7e5de;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: bold;
+        -webkit-font-smoothing: antialiased;
+        padding: 16px 21px;
+        background: #920d08;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        text-align: center;
+    }
 .category-shop-list>li {
   /*border-top:1px solid #dedede;*/
 }

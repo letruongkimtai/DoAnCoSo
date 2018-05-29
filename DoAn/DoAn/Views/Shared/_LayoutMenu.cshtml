@@ -1,14 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <style>
-
-        h5 {
-            text-decoration: line-through;
-        }
-    </style>
     <meta charset="utf-8">
-    <title>Double King Menu</title>
+    <title>Double King Burger</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,17 +13,23 @@
     <link rel="stylesheet" href="~/content/responsive.css" type="text/css" media="screen" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <!-- Important Owl stylesheet -->
+    <link href="~/Content/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <!-- Default Theme -->
+    <link href="~/Content/owl.theme.default.min.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
     <!--top-strip-->
-    <div class="top-strip">
+    <div class="top-strip" style="background:#920000">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 user">
                 </div>
-                <div class="col-md-6 language">
+                <div class="col-md-6 language" style="text-align: left">
                     <ul>
                         <li><a href="@Url.Action("Dangky","Nguoidung")">Đăng ký</a></li>
                         <li><a href="@Url.Action("Dangnhap","Nguoidung")">Đăng nhập</a></li>
@@ -40,31 +40,31 @@
     </div>
     <!--end-top-strip-->
     <!--navbar-->
-    <div class="container header">
-        <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+    <div class="container header" style="height:87.5px;">
+        <nav id="myNavbar" class="navbar navbar-default" role="navigation" style="height: 40px;">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="margin-top:-25px;">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://localhost:59620/Order/Index"><img src="~/images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="http://localhost:59620/Order/Index"><img style="margin-top:-60px;" width="100" height="100" src="~/Images2/Logo.png" alt="logo"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="http://localhost:59620/Order/Index">Trang chủ</a></li>
+                        <li class="active"><a href="http://localhost:59620/Order/Index" style="margin-top: -25px;">Trang chủ</a></li>
                         <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Thực đơn</a>
+                            <a href="" data-toggle="dropdown" class="dropdown-toggle" style="margin-top: -25px;">Thực đơn</a>
                             <ul class="dropdown-menu">
                                 @Html.Action("Loai", "Order")
                             </ul>
                         </li>
-                        <li>@Html.Action("GiohangPartial", "Giohang")</li>
-                        <li><a href="about.html">Khuyến mãi</a></li>
-                        <li><a href="contact.html">Cửa hàng</a></li>
+                        <li style="margin-top: -25px;">@Html.Action("GiohangPartial", "Giohang")</li>
+                        <li><a href="about.html" style="margin-top: -25px;">Khuyến mãi</a></li>
+                        <li><a href="contact.html" style="margin-top: -25px;">Cửa hàng</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -72,15 +72,11 @@
         </nav>
     </div>
     <!--end-navbar-->
-    <div class="page-title">
+    <div class="page-title" style="background: #920d08;">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 produti">
                     <h4 style="font-size:20PX;margin-bottom:30PX;">MENU</h4>
-                </div>
-                <div class="col-md-2 cart">
-                    <h4><a href="#">Giỏ hàng (0)</a></h4>
-
                 </div>
             </div>
         </div>
@@ -145,15 +141,15 @@
     </div>
     <!--end-prize-->
     <!--footer-->
-    <div class="full-footer">
-        <div class="container-full">
-            <div class="container info">
+    <div class="full-footer" style="background:#690505;">
+        <div class="container-full" style="background:#961515;">
+            <div class="container info" style="background:#961515;">
                 <div class="row">
                     <div class="col-md-4 addres">
-                        <img src="~/images/footer-logo.png" alt="logo">
-                        <h6>Double King Burger</h6>
+                        <img style="margin-top:-40.5px;" height="100" width="100" src="~/Images2/Logo.png" alt="logo">
+                        <h6 style="color:#ffffff;"> Double King Burger</h6>
                         <p>
-                            360 Nguyễn Sơn, Quận Tân Bình, TP.HCM
+                            351 Nguyễn Sơn, Quận Tân Bình, TP.HCM
                         </p>
                         <p>
                             SĐT: 0909090909(Chị Trâm)
@@ -188,15 +184,15 @@
             <div class="row bottom-strip">
                 <div class="col-md-6 rights">
                     <p>
-                        Copyright 2017 DK Corporation. All Rights Reserved.
+                        Copyright 2017 Double King Corporation. All Rights Reserved.
                     </p>
                 </div>
                 <div class="col-md-6 social">
                     <ul>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-asterisk"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble" style="color:white;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" style="color:white;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-asterisk" style="color:white;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook-square" style="color:white;"></i></a></li>
                     </ul>
                 </div>
             </div>
