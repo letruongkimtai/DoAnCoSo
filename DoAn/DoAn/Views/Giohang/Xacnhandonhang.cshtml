@@ -2,7 +2,9 @@
     ViewBag.Title = "Xacnhandonhang";
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
-<h2 style="color:black">Đơn hàng của quý khách đã được chúng tôi ghi nhận.Muốn ăn nữa thì nói không thì biến (best chị Hường)</h2>
-<p>
-@Html.ActionLink("VỀ TRANG CHỦ", "Index", "Order")
+<h2 style="color:black;font-size:20px;text-align:center;font-weight:600">Đơn hàng của quý khách đã được chúng tôi ghi nhận.Cảm ơn quý khách đã ủng hộ cửa hàng!!</h2>
+<img  src="~/Images2/thank-you.png" />
+<p style="margin-top:30px;font-weight:bold">
+    <span style="font-size:30px;font-weight:bold">&#8678;</span>   
+    @Html.ActionLink("TRỞ VỀ TRANG CHỦ", "Index", "Order")
 </p>

@@ -183,7 +183,11 @@
     <Content Include="Content\owl.carousel.css" />
     <Content Include="Content\owl.carousel.min.css" />
     <Content Include="Content\owl.theme.default.min.css" />
+    <Content Include="Images2\slide1.jpg" />
     <Content Include="Images2\Logo.png" />
+    <Content Include="Images2\slide2.jpg" />
+    <Content Include="Images2\slide3.jpg" />
+    <Content Include="Images2\thank-you.png" />
     <Content Include="Scripts\jquery-easing\jquery.easing.compatibility.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.js" />
     <Content Include="Scripts\jquery-easing\jquery.easing.min.js" />
@@ -191,12 +195,24 @@
     <Content Include="Scripts\jquery\jquery.min.js" />
     <Content Include="Scripts\jquery\jquery.slim.js" />
     <Content Include="Scripts\jquery\jquery.slim.min.js" />
+    <Content Include="Scripts\js\bootstrap.js" />
+    <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\gmap3.min.js" />
+    <Content Include="Scripts\js\jquery-1.11.0.min.js" />
+    <Content Include="Scripts\js\jquery.flexslider-min.js" />
+    <Content Include="Scripts\js\jquery.flexslider.js" />
+    <Content Include="Scripts\js\jquery.min.js" />
+    <Content Include="Scripts\js\jquery.nouislider.min.js" />
+    <Content Include="Scripts\js\lightbox.js" />
+    <Content Include="Scripts\js\modernizr.js" />
     <Content Include="Scripts\js\sb-admin-charts.js" />
     <Content Include="Scripts\js\sb-admin-charts.min.js" />
     <Content Include="Scripts\js\sb-admin-datatables.js" />
     <Content Include="Scripts\js\sb-admin-datatables.min.js" />
     <Content Include="Scripts\js\sb-admin.js" />
     <Content Include="Scripts\js\sb-admin.min.js" />
+    <Content Include="Scripts\js\script.js" />
+    <Content Include="Scripts\js\waypoint.min.js" />
     <Content Include="Scripts\owl.carousel.js" />
     <Content Include="Content\owl.theme.default.css" />
     <Content Include="Content\product-slider.css" />
@@ -351,6 +367,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\waypoint.min.js" />
+    <Content Include="Views\Shared\Cart.html" />
     <Content Include="Views\Shared\Detail.html" />
     <Content Include="Views\Shared\index.html" />
     <Content Include="Views\Shared\Loai.html" />
@@ -380,10 +397,8 @@
     <Content Include="Views\Order\Catalogue.cshtml" />
     <Content Include="Views\Shared\_LayoutDetails.cshtml" />
     <Content Include="Views\Order\Details.cshtml" />
-    <Content Include="Views\Giohang\GioHang.cshtml" />
     <Content Include="Views\Giohang\GiohangPartial.cshtml" />
     <Content Include="Views\Order\HOTDISH.cshtml" />
-    <Content Include="Views\Giohang\DatHang.cshtml" />
     <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
     <Content Include="Views\Shared\_LayoutMenu.cshtml" />
     <Content Include="Views\Order\SPTheoloai.cshtml" />
@@ -392,6 +407,10 @@
     <Content Include="Scripts\jquery\jquery.slim.min.map" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutCart.cshtml" />
+    <Content Include="Views\Giohang\GioHang.cshtml" />
+    <Content Include="Views\Shared\_LayoutOrder.cshtml" />
+    <Content Include="Views\Giohang\DatHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

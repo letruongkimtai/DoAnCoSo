@@ -1,53 +1,73 @@
-﻿@using DoAn.Models
-@model List<Giohang>
-@{
+﻿@{
     ViewBag.Title = "GioHang";
-    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
-} <h2 style="text-align:center">THÔNG TIN GIỎ HÀNG</h2>
-<table align="center" border="1">
-    <tr style="text-align:center; font-weight:bold">
-        <td>  Mã món </td>
-        <td> Tên món ăn </td>
-        <td> Ảnh </td>
-        <td> Số lượng </td>
-        <td> Đơn giá </td>
-        <td> Thành tiền </td>
-        <td width="50px"></td>
-        <td width="50px"></td>
-        <td width="50px"></td>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr style="text-align:center; font-weight:bold">
-            <td> @item.iMamon </td>
-            <td> @item.sTenmon</td>
-            <td><img src="~/images2/@item.sAnh" style="height:60px;width:60px"></td>
-            @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iMamon }))
-            {
-                <td>
-                    <input type="number" min="1" name="txtSoluong" value="@item.iSoluong" style="background-color:yellow" />
-                </td>
-                <td>@String.Format("{0:0,0}", item.dDongia) </td>
-                <td>@String.Format("{0:0,0}", item.dThanhtien) </td>
-                <td><a href="@Url.Action("SPTheoloai/5","Order")"> Thêm nước </a></td>
-                <td> <a href="@Url.Action("Details", "Order", new { id = item.iMamon})"> Chi tiết </a></td>
-                <td> @Html.ActionLink("Xóa", "XoaGiohang", new { @iMaSp = item.iMamon })</td>
-                <td> <input type="submit" value="Cập Nhật" /></td>
-            }
+    Layout = "~/Views/Shared/_LayoutCart.cshtml";
+}
+
+@using DoAn.Models
+@model List<Giohang>
+
+<div class="sixteen columns cart-section oflow">
+    <!-- Cart -->
+    <table class="table cart-table responsive-table">
+        <tr>
+            <th width="30px" style="font-size:14px;">
+                
+            </th>
+            <th width="30px" style="font-size:14px;">
+                Tên món
+            </th>
+            <th width="30px" style="font-size:14px;">
+                Giá
+            </th>
+            <th width="30px" style="font-size:14px;">
+                Số lượng
+            </th>
+           
+            <th width="30px" style="font-size:14px;">
+            </th>
+            <th width="30px" style="font-size:14px;">
+            </th>
         </tr>
-    }
-    <tr style="font-weight: bold; text-align:right; color:red">
-        <td colspan="4"> Số lượng món ăn: @ViewBag.Tongsoluong </td>
-        <td colspan="5"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ </td>
-    </tr>
-    <tr style="font-weight: bold; color:blue; text-align:right ">
-        <td colspan="9">
-            @Html.ActionLink("Xóa Giỏ Hàng", "XoaTatcaGiohang")
-        </td>
-    </tr>
-    <tr style="font-weight: bold; color:blue; text-align:right ">
-        <td colspan="9" align="center">
-            @Html.ActionLink("ĐẶT HÀNG", "Dathang", "GioHang")
-        </td>
-    </tr>
-</table>
+        <!-- Item -->
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img style="height:120px;width:120px" src="~/Images2/@item.sAnh" />
+                </td>
+                <td class="cart-title">
+                    <a href="@Url.Action("Details", "Order", new { id = item.iMamon})" style="font-size:14px;">@item.sTenmon</a>
+                </td>
+                <td style="font-size:14px;">
+                    @item.dDongia.000đ
+                </td>
+                @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iMamon }))
+                {
+                    <td>
+
+
+                        <input type="number" min="1" name="txtSoluong" value="@item.iSoluong" class="qty" />
+
+                    </td>
+                    
+                    <td> <input type="submit" value="Cập Nhật" /></td>
+                    <td>
+                        <a class="cart-remove" style="font-size:15px;font-weight:bold"><span style="background-color:red">@Html.ActionLink("Xóa", "XoaGiohang", new { @iMaSp = item.iMamon })</span></a>
+                    </td>
+
+                }
+            </tr>
+        }
+
+    </table>
+
+    <div style="float:right;font-size:18px;font-weight:bold;">        
+        <a style="margin-left:30px;font-size:18px;font-weight:bold" href="@Url.Action("SPTheoloai/5","Order")"> Thêm nước |</a>
+        
+        <a>@Html.ActionLink("Thanh toán", "Dathang", "GioHang")</a>
+    </div>
+    <div>
+        <p style="font-size:22px; font-weight:bold;float:right;"><span style="color:#bf1e2d;">Tổng tiền:</span> @ViewBag.Tongtien.000đ</p>
+    </div>
+
+</div>
