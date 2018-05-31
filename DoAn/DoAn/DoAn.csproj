@@ -192,10 +192,14 @@
     <Content Include="Content\owl.carousel.min.css" />
     <Content Include="Content\owl.theme.default.min.css" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <Content Include="Content\PagedList.css" />
     <Content Include="Images2\slide1.jpg" />
 
+=======
+    <Content Include="Images2\slide1.jpg" />
+>>>>>>> 1e99fde5682021575525bb8e235a1413edaadb63
 =======
     <Content Include="Images2\slide1.jpg" />
 >>>>>>> 1e99fde5682021575525bb8e235a1413edaadb63
@@ -424,6 +428,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Content Include="Views\Admin\Monan.cshtml" />
     <Content Include="Views\Admin\ThemmoiMonan.cshtml" />
     <Content Include="Views\Admin\Chitietmonan.cshtml" />
@@ -432,12 +437,17 @@
 
 =======
 >>>>>>> 1e99fde5682021575525bb8e235a1413edaadb63
+=======
+>>>>>>> 1e99fde5682021575525bb8e235a1413edaadb63
     <Content Include="Views\Shared\_LayoutCart.cshtml" />
     <Content Include="Views\Giohang\GioHang.cshtml" />
     <Content Include="Views\Shared\_LayoutOrder.cshtml" />
     <Content Include="Views\Giohang\DatHang.cshtml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1e99fde5682021575525bb8e235a1413edaadb63
 =======
 >>>>>>> 1e99fde5682021575525bb8e235a1413edaadb63
   </ItemGroup>
