@@ -1,0 +1,53 @@
+﻿@model DoAn.Models.CTMONAN
+
+@{
+    ViewBag.Title = "Chitietmonan";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>THÔNG TIN CHI TIẾT MÓN ĂN</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên món ăn/thức uống:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tenmon)
+        </dd>
+        <dt>
+            Giá bán:
+        </dt>
+        <dd>
+            @String.Format("{0:0,0}", Model.Giaban) .000 VNĐ
+        </dd>
+        <dt>
+            Mô tả:
+        </dt>
+        <dd style="width:600px; text-align:justify">
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+        <dt>
+            Ảnh:
+        </dt>
+        <dd>
+            <img src="@Url.Content("~/Images2/"+  Model.Anh)" width="120px" />
+        </dd>
+        <dt>
+            Số lượng tồn:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trangthai)
+        </dd>
+        <dt>
+            Tên loại:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LOAIMON.Tenloai)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("ĐIỀU CHỈNH", "Suamonan", new { id = Model.Mamon }) |
+    @Html.ActionLink("TRỞ VỀ", "Monan")
+</p>

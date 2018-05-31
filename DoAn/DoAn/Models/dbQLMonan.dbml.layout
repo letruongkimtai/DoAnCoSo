@@ -45,14 +45,14 @@
         <classShapeMoniker Id="801e2e8f-d9e8-4c19-916f-3090ef89931a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.16429768880208); (6.25 : 2.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 2.16429768880208); (6.25 : 2.16429768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLMonanDataContext/DONDATHANG/DONDATHANG_CHITIETDONTHANG" />
       <nodes>
         <classShapeMoniker Id="9c74105a-fb2f-429f-93a1-1cf7c7f44ce1" />
         <classShapeMoniker Id="801e2e8f-d9e8-4c19-916f-3090ef89931a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.48484537760417); (3.5 : 2.48484537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.48484537760417); (3.5 : 2.48484537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/dbQLMonanDataContext/KHACHHANG/KHACHHANG_DONDATHANG" />
       <nodes>
         <classShapeMoniker Id="156029c2-2522-43e4-9731-a69d5ec0cb39" />

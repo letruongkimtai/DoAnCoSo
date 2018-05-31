@@ -381,7 +381,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 body {
     line-height: 1;
     font-family: Open Sans;
-    background: #690505 !important;
+    background: #c11b1b !important;
 }
 ol,ul {
   list-style:none;
@@ -440,10 +440,10 @@ a {
 }
 .language a {
   padding:6px 10px;
-  font-size:11px;
+  font-size:13.5px;
   font-weight:bold;
   text-transform:capitalize;
-  color:#ebebeb;
+  color:#ffffff;
   text-decoration:none;
 }
 .language a:hover {
@@ -731,6 +731,7 @@ a {
     .articles span {
         font-size: 18px;
         font-weight: bold !important;
+        color: #c30808;
     }
 .articles a:hover {
   color:#89573b;
@@ -743,7 +744,8 @@ a {
   margin-top:-2px;
   text-align:left;
   text-transform:uppercase;
-  font-weight:bold -webkit-border-bottom-right-radius:3px;
+  font-weight:bold;
+  -webkit-border-bottom-right-radius:3px;
   -webkit-border-bottom-left-radius:3px;
   -moz-border-radius-bottomright:3px;
   -moz-border-radius-bottomleft:3px;
@@ -2131,19 +2133,19 @@ table.cart-table {
 }
 table.cart-table tr {
 }
-table.cart-table th {
-  border:none;
-  background-color:#f6f6f6;
-  text-align:left;
-  padding:10px 20px;
-  color:#fff;
-  vertical-align:top;
-  font-size:11px;
-  font-weight:600;
-  background:#5a423b;
-  text-transform:uppercase;
-  padding:20px 20px;
-}
+    table.cart-table th {
+        border: none;
+        background-color: #f6f6f6;
+        text-align: left;
+        padding: 10px 20px;
+        color: #fff;
+        vertical-align: top;
+        font-size: 11px;
+        font-weight: 600;
+        background: #920d08;
+        text-transform: uppercase;
+        padding: 20px 20px;
+    }
 table.cart-table td {
   padding:20px;
   border-bottom:#eee 1px solid;
@@ -2187,10 +2189,10 @@ table.cart-table.bottom th {
   margin-top:116px;
 }
 .cart-totals .cart-table th {
-  vertical-align:middle;
-  border-bottom:1px solid #4a3631;
-  padding:15px 0px 15px 20px;
-  background:#5a423b!important;
+    vertical-align: middle;
+    border-bottom: 1px solid #fff;
+    padding: 15px 0px 15px 20px;
+    background: #920d08 !important;
 }
 .cart-totals .cart-table td {
   border-bottom:1px solid #ddd;
@@ -2392,19 +2394,19 @@ body>div.container.checking-area>div>div.col-md-9.method-right>form>a:hover {
   color:#fff;
 }
 .coupon-btn {
-  float:left;
-  background:#5a423b;
-  padding:16px 20px;
-  color:#fff!important;
-  -webkit-border-radius:3px;
-  -moz-border-radius:3px;
-  border-radius:3px;
-  font-size:12px;
-  text-transform:uppercase;
-  margin-left:10px;
-  font-weight:bold;
-  margin-top:5px;
-  border:none!important;
+    float: left;
+    background: #920d08;
+    padding: 16px 20px;
+    color: #fff !important;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-left: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+    border: none !important;
 }
 .checkout-btn {
   margin-top: 6px;
@@ -2420,18 +2422,18 @@ body>div.container.checking-area>div>div.col-md-9.method-right>form>a:hover {
   padding-bottom:0;
 }
 .product-details h1 {
-  font-size:20px;
-  font-weight:700;
-  color:#382925;
-  padding-bottom:18px;
-}
-.product-details p.price {
-  font-size:21px;
-  color:#382925;
-  font-weight:700;
-  float:left;
-  margin-top:0!important;
-}
+        font-size: 25px;
+        font-weight: 700;
+        color: #000000;
+        padding-bottom: 18px;
+    }
+    .product-details p.price {
+        font-size: 22px;
+        color: #f78900;
+        font-weight: 700;
+        float: left;
+        margin-top: 0 !important;
+    }
 .product-details p {
   clear:both;
   line-height:22px;
@@ -2447,18 +2449,18 @@ body>div.container.checking-area>div>div.col-md-9.method-right>form>a:hover {
   text-decoration:line-through;
 }
 .product-details a {
-  background:#382925;
-  color:#fff;
-  font-size:11px;
-  font-weight:bold;
-  padding:12px 15px;
-  float:left;
-  margin-top:0px;
-  margin-left:15px;
-  -webkit-border-radius:3px;
-  -moz-border-radius:3px;
-  border-radius:3px;
-}
+        background: #c11b1b;
+        color: #fff;
+        font-size: 13.5px;
+        font-weight: bold;
+        padding: 12px 15px;
+        float: left;
+        margin-top: 0px;
+        margin-left: 15px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
 .reviews {
   clear:both;
   float:left;
@@ -2486,9 +2488,11 @@ input.qty {
 .availability {
   clear:both;
 }
-.availability p {
-  float:left;
-}
+    .availability p {
+        float: left;
+        font-size: 20px;
+        font-weight: bold;
+    }
 .availability span {
   float:left;
   margin-top:18px;

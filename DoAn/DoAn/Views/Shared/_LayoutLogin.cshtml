@@ -2,11 +2,6 @@
 
 <html>
 <head>
-    <style>
-        h5 {
-            text-decoration: line-through;
-        }
-    </style>
     <meta charset="utf-8">
     <title>Member</title>
     <meta name="description" content="">
@@ -23,14 +18,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
     <!--top-strip-->
-    <div class="top-strip">
+    <div class="top-strip" style="background:#920000">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 user">
                 </div>
-                <div class="col-md-6 language">
+                <div class="col-md-6 language" style="text-align: left">
                     <ul>
                         <li><a href="@Url.Action("Dangky","Nguoidung")">Đăng ký</a></li>
                         <li><a href="@Url.Action("Dangnhap","Nguoidung")">Đăng nhập</a></li>
@@ -41,31 +35,31 @@
     </div>
     <!--end-top-strip-->
     <!--navbar-->
-    <div class="container header">
-        <nav id="myNavbar" class="navbar navbar-default" role="navigation">
+    <div class="container header" style="height:87.5px;">
+        <nav id="myNavbar" class="navbar navbar-default" role="navigation" style="height: 40px;">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="margin-top:-25px;">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://localhost:59620/Order/Index"><img src="~/images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="http://localhost:59620/Order/Index"><img style="margin-top:-60px;" width="100" height="100" src="~/Images2/Logo.png" alt="logo"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="http://localhost:59620/Order/Index">Trang chủ</a></li>
+                        <li class="active"><a href="http://localhost:59620/Order/Index" style="margin-top: -25px;">Trang chủ</a></li>
                         <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Thực đơn</a>
+                            <a href="" data-toggle="dropdown" class="dropdown-toggle" style="margin-top: -25px;">Thực đơn</a>
                             <ul class="dropdown-menu">
                                 @Html.Action("Loai", "Order")
                             </ul>
                         </li>
-                        <li>@Html.Action("GiohangPartial", "Giohang")</li>
-                        <li><a href="about.html">Khuyến mãi</a></li>
-                        <li><a href="contact.html">Cửa hàng</a></li>
+                        <li style="margin-top: -25px;">@Html.Action("GiohangPartial", "Giohang")</li>
+                        <li><a href="about.html" style="margin-top: -25px;">Khuyến mãi</a></li>
+                        <li><a href="contact.html" style="margin-top: -25px;">Cửa hàng</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -73,36 +67,25 @@
         </nav>
     </div>
     <!--end-navbar-->
-    <div class="page-title">
+    <div class="page-title" style="background: #920d08;">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 produti">
-                    <h4>CHECKOUT</h4>
-                </div>
-                <div class="col-md-2 cart">
-                    <h4><a href="#">chart (2 items)</a></h4>
-                    <ul>
-                        <li><a href="#">home /</a></li>
-                        <li><a href="#">products</a></li>
-                    </ul>
+                    <h4 style="font-size:20PX;margin-bottom:30PX;">MEMBER</h4>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- shop-page -->
-    <div class="container checking-area">
+    <!-- shop-page -->    <div class="container checking-area">
         <div class="row">
             <div class="col-md-9 checkout-accordion">
-
                 <div class="col-md-12 white-bg">
-
                     <div class="bs-example">
                         <div>
                             @RenderBody()
                         </div>
                         <div class="panel-group" id="accordion">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -145,6 +128,7 @@
                             </ul>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -156,15 +140,15 @@
     </div>
     <!--end-prize-->
     <!--footer-->
-    <div class="full-footer">
-        <div class="container-full">
-            <div class="container info">
+    <div class="full-footer" style="background:#690505;">
+        <div class="container-full" style="background:#961515;">
+            <div class="container info" style="background:#961515;">
                 <div class="row">
                     <div class="col-md-4 addres">
-                        <img src="~/images/footer-logo.png" alt="logo">
-                        <h6>Thức Ăn Nhanh Win</h6>
+                        <img style="margin-top:-40.5px;" height="100" width="100" src="~/Images2/Logo.png" alt="logo">
+                        <h6 style="color:#ffffff;"> Double King Burger</h6>
                         <p>
-                            360 Nguyễn Sơn, Quận Tân Bình, TP.HCM
+                            351 Nguyễn Sơn, Quận Tân Bình, TP.HCM
                         </p>
                         <p>
                             SĐT: 0909090909(Chị Trâm)
@@ -199,23 +183,24 @@
             <div class="row bottom-strip">
                 <div class="col-md-6 rights">
                     <p>
-                        Copyright 2017 WIN Corporation. All Rights Reserved.
+                        Copyright 2017 Double King Corporation. All Rights Reserved.
                     </p>
                 </div>
                 <div class="col-md-6 social">
                     <ul>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fa fa-asterisk"></i></a></li>
-                        <li><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble" style="color:white;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" style="color:white;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-asterisk" style="color:white;"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook-square" style="color:white;"></i></a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
     <!--end-footer-->
-    <script src="js/jquery-1.11.0.min.js"></script>
-    <script src="js/lightbox.js"></script>
+
+    <script src="~/Scripts/js/jquery-1.11.0.min.js"></script>
+    <script src="~/Scripts/js/lightbox.js"></script>
     <script>
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-2196019-1']);
@@ -226,10 +211,15 @@
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script src="js/modernizr.js"></script>
-    <script type="text/javascript" src="js/jquery.nouislider.min.js"></script>
+
+    <script src="~/Scripts/js/jquery.min.js"></script>
+
+    <script src="~/Scripts/js/bootstrap.js"></script>
+
+    <script src="~/Scripts/js/script.js"></script>
+
+    <script src="~/Scripts/js/modernizr.js"></script>
+
+    <script src="~/Scripts/js/jquery.nouislider.min.js"></script>
 </body>
 </html>

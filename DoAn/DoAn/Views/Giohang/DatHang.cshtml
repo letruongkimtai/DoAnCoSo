@@ -1,73 +1,165 @@
-﻿@using DoAn.Models
-@model List<Giohang>
- 
+﻿
 @{
-    ViewBag.Title = "ĐƠN ĐẶT HÀNG";
-    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
-} <h2 style="text-align:center">THÔNG TIN MÓN ĂN</h2>
-<table align="center" border="1">
-    <tr style="text-align:center; font-weight:bold">
-        <td> Tên món ăn </td>
-        <td> Ảnh bìa </td>
-        <td> Số lượng </td>
-        <td> Đơn giá </td>
-        <td> Thành tiền </td>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr style="text-align:center; font-weight:bold">
-            <td> @item.sTenmon</td>
-            <td><img src="~/Images2/@item.sAnh" width="60px" height="50px"></td>
-            @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iMamon }))
-            {
-                <td>
-                    @item.iSoluong
-                </td>
-                <td>@String.Format("{0:0,0}", item.dDongia) </td>
-                <td>@String.Format("{0:0,0}", item.dThanhtien) </td>
-            }
-        </tr>
-    }
-    <tr style="font-weight: bold; text-align:right; color:red">
-        <td colspan="3"> Số lượng sách: @ViewBag.Tongsoluong </td>
-        <td colspan="3"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ </td>
-    </tr>
-    <tr style="font-weight: bold; color:blue; text-align:right ">
-        <td colspan="6">
-            @Html.ActionLink("TRỞ VỀ GIỎ HÀNG", "Giohang", "GioHang")
-        </td>
-    </tr>
-</table>
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_LayoutOrder.cshtml";
+}
 
-<h2 style="text-align:center">THÔNG TIN ĐẶT HÀNG</h2>
-@{
-    KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+@using DoAn.Models
+@model List<Giohang>
+
+<div class="sixteen columns cart-section oflow">
+    <!-- Cart -->
+    <table class="table cart-table responsive-table">
+        <tr>
+            <th width="30px" style="font-size:14px;">
+                
+            </th>
+            <th width="30px" style="font-size:14px;">
+                Tên món
+            </th>
+            <th width="30px" style="font-size:14px;">
+                Giá
+            </th>
+            <th width="30px" style="font-size:14px;">
+                Số lượng
+            </th>
+
+            <th width="30px" style="font-size:14px;">
+            </th>
+            <th width="30px" style="font-size:14px;">
+            </th>
+        </tr>
+        <!-- Item -->
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img style="height:120px;width:120px" src="~/Images2/@item.sAnh" />
+                </td>
+                <td class="cart-title">
+                    <a href="@Url.Action("Details", "Order", new { id = item.iMamon})" style="font-size:14px;">@item.sTenmon</a>
+                </td>
+                <td style="font-size:14px;">
+                    @item.dDongia.000đ
+                </td>
+                @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iMamon }))
+                {
+                <td>
+
+
+                     @ViewBag.Tongsoluong
+
+                </td>
+
+                    
+                    <td>
+                        <a class="cart-remove" style="font-size:15px;font-weight:bold"><span style="background-color:red">@Html.ActionLink("Xóa", "XoaGiohang", new { @iMaSp = item.iMamon })</span></a>
+                    </td>
+
+                }
+            </tr>
+        }
+
+    </table>
+    <div>
+        <p style="font-weight:bold;margin-top:10px;padding:0px;"><span style="font-size:30px;color:black">&#8678; </span>@Html.ActionLink("Quay lại", "Giohang", "GioHang")</p>
+    </div>
+   
+
+</div>
+
+
+    <div class="taxat">
+        <p style=" text-align:center;font-weight:bold;font-size:25px">THÔNG TIN ĐẶT HÀNG </p>
+        <div class="col-md-6 taxes nopadding">
+            <div style="margin-top: 120px;font-size: 22px;">
+                @{
+        KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+                }
+                <table align="center">
+                    @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <tr style="height:40px">
+                <td style="font-weight:bold;"> Họ tên khách hàng:</td>
+                <td style="text-align:center" >   @kh.HoTen </td>
+            </tr>
+            <tr style="height:40px">
+                <td style="font-weight:bold"> Địa chỉ:</td>
+                <td style="text-align:center">  @kh.Diachi </td>
+            </tr>
+            <tr style="height:40px">
+                <td style="font-weight:bold"> Địện thoại:</td>
+                <td style="text-align:center">  @kh.Dienthoai </td>
+            </tr>
+            <tr style="height:40px">
+                <td style="font-weight:bold"> Ngày đặt</td>
+                <td style="text-align:center"> @DateTime.Now.ToShortDateString() </td>
+            </tr>
+            <tr style="height:40px">
+                <td></td>
+                <td>
+                    <input style="  margin-right:20px;
+                                    margin-top:22px;
+                                 text-align: center;
+                                  display: block;
+                                background: #920d08;
+                                color: #fff;
+                                padding: 10px;
+                                text-transform: uppercase;
+                                font-weight: 700;
+                                font-size: 15px;
+                                -webkit-transition: all 0.2s ease-in-out;
+                                -moz-transition: all 0.2s ease-in-out;
+                                -o-transition: all 0.2s ease-in-out;
+                                -ms-transition: all 0.2s ease-in-out;
+                                transition: all 0.2s ease-in-out;
+                                padding: 15px;
+                                -webkit-border-radius: 3px;
+                                -moz-border-radius: 3px;
+                                 border-radius: 3px;" class="calculate-shipping" 
+                           type="Submit" value="Xác nhận và thanh toán" />
+                    
+                </td>
+            </tr>
 }
-<table align="center">
-@using (Html.BeginForm())
-{
-    @Html.ValidationSummary(true)
-    <tr style="height:40px">
-        <td> Họ tên khách hàng:</td>
-        <td style="font-weight:bold">  @kh.HoTen </td>
-    </tr>
-    <tr style="height:40px">
-        <td> Địa chỉ:</td>
-        <td style="font-weight:bold">  @kh.Diachi </td>
-    </tr>
-     <tr style="height:40px">
-        <td> Địện thoại:</td>
-        <td style="font-weight:bold">  @kh.Dienthoai </td>
-    </tr>  
-    <tr style="height:40px">
-        <td> Ngày đặt</td>
-        <td style="font-weight:bold"> @DateTime.Now.ToShortDateString() </td>
-    </tr>
-    <tr style="height:40px">
-        <td></td>
-        <td>
-            <input type="Submit" value="ĐỒNG Ý ĐẶT HÀNG" />
-        </td>
-    </tr>
-}
-</table>
+                </table>
+            </div>
+        </div>
+        <!-- Cart Totals -->
+        <div class="col-md-6 eight columns cart-totals">
+            <form action="#" method="get" class="apply-coupon" style="margin-top:-40px;margin-bottom:17px;">
+                <input class="search-field" type="text" placeholder="Nhập Mã Khuyến Mãi" value="" style="padding-left:40px;">
+                <a href="#" class="coupon-btn checkout-btn">Áp Dụng</a>
+            </form>
+            <table class="table cart-table test" ">
+                <tbody>
+                    <tr>
+                        <th style="font-size:14px;">
+                            Tổng cộng
+                        </th>
+                        <td style="font-size:14px;">
+                            <strong>@ViewBag.Tongtien.000đ</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="font-size:14px;">
+                            Giảm giá
+                        </th>
+                        <td style="font-size:14px;">
+                            Không 
+                        </td>
+                    </tr>
+                    <tr>
+                        <th style="font-size:14px;">
+                            Thành tiền
+                        </th>
+                        <td style="font-size:14px;">
+                            <strong>@ViewBag.Tongtien.000đ</strong>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>

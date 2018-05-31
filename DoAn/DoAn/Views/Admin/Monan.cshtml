@@ -1,0 +1,62 @@
+﻿@using DoAn.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DoAn.Models.CTMONAN>
+
+@{
+    ViewBag.Title = "Monan";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>QUẢN LÝ THÔNG TIN MÓN ĂN</h2>
+<p>
+    @Html.ActionLink("THÊM MỚI", "ThemmoiMonan")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:200px">  Tên món ăn/thức uống </th>
+        <th style="width:100px">  Giá bán  </th>
+        <th style="width:300px">  Mô tả    </th>
+        <th style="width:120px">  Ảnh </th>
+        <th style="width:120px">  Trạng thái </th>
+        <th style="width:120px">  Tên loại   </th>
+        <th style="width:200px">  </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tenmon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Giaban)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mota)
+            </td>
+            <td>
+                <img src="@Url.Content("~/Images2/"+  item.Anh)" width="120px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trangthai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LOAIMON.Tenloai)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Suamonan", new { id = item.Mamon }) |
+                @Html.ActionLink("Chi tiết", "Chitietmonan", new { id = item.Mamon }) |
+                @Html.ActionLink("Xóa", "Xoamonan", new { id = item.Mamon })
+            </td>
+        </tr>
+    }
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("Monan", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

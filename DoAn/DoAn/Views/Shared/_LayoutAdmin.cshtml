@@ -50,7 +50,7 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents">
                         <li>
-                            <a href="navbar.html">Navbar</a>
+                            <a href="@Url.Action("Monan","Admin")">Quản lý món ăn</a>
                         </li>
                         <li>
                             <a href="cards.html">Cards</a>
@@ -237,6 +237,9 @@
             <h1>Navbar</h1>
             <hr>
             <p>The SB Admin navbar can be either fixed or static, and it supports the navbar-light and navbar-dark Bootstrap 4 classes.</p>
+            <div>
+                @RenderBody()
+            </div>
             <a class="btn btn-primary" href="#" id="toggleNavPosition">Toggle Fixed/Static Navbar</a>
             <a class="btn btn-primary" href="#" id="toggleNavColor">Toggle Navbar Color</a>
             <!-- Blank div to give the page height to preview the fixed vs. static navbar-->
@@ -249,9 +252,6 @@
                 <div class="text-center">
                     <small>Copyright Â© Your Website 2018</small>
                 </div>
-            </div>
-            <div>
-                @RenderBody()
             </div>
         </footer>
         <!-- Scroll to Top Button-->

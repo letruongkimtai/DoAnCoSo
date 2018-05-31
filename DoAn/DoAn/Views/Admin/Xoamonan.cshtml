@@ -1,0 +1,61 @@
+﻿@model DoAn.Models.CTMONAN
+
+@{
+    ViewBag.Title = "Xoamonan";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>XÁC NHẬN THÔNG TIN MÓN ĂN CẦN XÓA</h2>
+
+<h3> Bạn quyết định xóa quyển món ăn này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên món ăn/thức uống:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tenmon)
+        </dd>
+        <dt>
+            Giá bán:
+        </dt>
+        <dd>
+            @String.Format("{0:0,0}", Model.Giaban) VNĐ
+        </dd>
+        <dt>
+            Mô tả:
+        </dt>
+        <dd style="width:600px; text-align:justify">
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+        <dt>
+            Ảnh:
+        </dt>
+        <dd>
+            <img src="@Url.Content("~/Images2/"+  Model.Anh)" width="120px" />
+        </dd>
+        <dt>
+            Trạng thái:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Trangthai)
+        </dd>
+        <dt>
+            Loại món:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LOAIMON.Tenloai)
+        </dd>
+    </dl>
+</div>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("TRỞ VỀ", "Monan")
+        </div>
+    }
+</div>
