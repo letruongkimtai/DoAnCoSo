@@ -1,0 +1,64 @@
+﻿@using DoAn.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DoAn.Models.KHACHHANG>
+
+@{
+    ViewBag.Title = "Khachhang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN TÀI KHOẢN KHÁCH HÀNG</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th style="width:200px">  Họ tên </th>
+        <th style="width:200px">  Tên tài khoản  </th>
+        <th style="width:200px">  Mật khẩu    </th>
+        <th style="width:120px">  Email </th>
+        <th style="width:120px">  Địa chỉ </th>
+        <th style="width:120px">  Số điện thoại   </th>
+        <th style="width:200px">  Ngày sinh </th>
+    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoTen)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Taikhoan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Matkhau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dienthoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ngaysinh)
+                </td>
+                <td>
+                    @Html.ActionLink("Chi tiết", "Chitietkhachhang", new { id = item.MaKH }) |
+                    @Html.ActionLink("Xóa", "Xoakhachhang", new { id = item.MaKH })
+                </td>
+            </tr>
+        }
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("Monan", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>
+
+

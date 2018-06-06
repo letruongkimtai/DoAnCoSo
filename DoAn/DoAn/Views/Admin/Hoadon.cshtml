@@ -1,0 +1,41 @@
+﻿@model IEnumerable<DoAn.Models.DONDATHANG>
+
+@{
+    ViewBag.Title = "Hoadon";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUÀN LÝ HÓA ĐƠN</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th style="width:120px">  Đã thanh toán chưa </th>
+        <th style="width:120px">  Tình trạng giao hàng  </th>
+        <th style="width:150px">  Ngày đặt    </th>
+        <th style="width:120px">  Mã khách hang </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dathanhtoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tinhtranggiaohang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaydat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKH)
+        </td>
+        <td>
+            @Html.ActionLink("Xóa", "Xoahoadon", new { id = item.MaDonHang })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,56 @@
+﻿@model DoAn.Models.DONDATHANG
+
+@{
+    ViewBag.Title = "Xoahoadon";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>XÓA HÓA ĐƠN</h2>
+
+<h3>Bạn muốn xóa hóa đơn này</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Đã thanh toán:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dathanhtoan)
+        </dd>
+
+        <dt>
+            Trình trạng giao hàng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tinhtranggiaohang)
+        </dd>
+
+        <dt>
+            Ngày đặt:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaydat)
+        </dd>
+
+        <dt>
+            Mã khách hàng:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKH)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("TRỞ VỀ", "Hoadon")
+        </div>
+    }
+</div>
